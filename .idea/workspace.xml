@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f6b10a85-7419-4091-b677-ba295c93e3e7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connexion.html" afterPath="$PROJECT_DIR$/connexion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/DB_LINK.php" afterPath="$PROJECT_DIR$/php/DB_LINK.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/Inscription.php" afterPath="$PROJECT_DIR$/php/Inscription.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/connexion.php" afterPath="$PROJECT_DIR$/php/connexion.php" />
-    </list>
+    <list default="true" id="f6b10a85-7419-4091-b677-ba295c93e3e7" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -254,12 +249,12 @@
       <workItem from="1483524097976" duration="4427000" />
       <workItem from="1483537123144" duration="3410000" />
       <workItem from="1483540616556" duration="13000" />
-      <workItem from="1483543041545" duration="93000" />
+      <workItem from="1483543041545" duration="152000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7943000" />
+    <option name="totallyTimeSpent" value="8002000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
