@@ -1,3 +1,11 @@
+<?php
+if (!empty($_POST)) {
+    require 'php/DB_LINK.php';
+    $stmt = $dbh->prepare('INSERT INTO `user`(`last name`, `first name`, `email`, `password`) VALUES (:lastname,:firstname,:email, :password)');
+$stmt->execute([':lastname' => $_POST['lastname'],':firstname'=> $_POST['firstname'], ':password' => $_POST['pass'], ':email' => $_POST['email']]);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="">
     <head>
@@ -42,14 +50,14 @@
                                 <label>
                                     Nom<span class="req">*</span>
                                 </label>
-                                <input type="text" required autocomplete="off" />
+                                <input name="lastname" type="text" required autocomplete="off" />
                             </div>
 
                             <div class="field-wrap">
                                 <label>
                                     Prénom<span class="req">*</span>
                                 </label>
-                                <input type="text"required autocomplete="off"/>
+                                <input name="firstname" type="text"required autocomplete="off"/>
                             </div>
                         </div>
 
@@ -57,21 +65,21 @@
                             <label>
                                 Adresse e-mail<span class="req">*</span>
                             </label>
-                            <input type="email"required autocomplete="off"/>
+                            <input name="email" type="email"required autocomplete="off"/>
                         </div>
 
                         <div class="field-wrap">
                             <label>
                                 Mot de passe<span class="req">*</span>
                             </label>
-                            <input type="password"required autocomplete="off"/>
+                            <input name="pass" type="password"required autocomplete="off"/>
                         </div>
 
                         <div class="field-wrap">
                             <label>
                                 Confirmez votre mot de passe<span class="req">*</span>
                             </label>
-                            <input type="password"required autocomplete="off"/>
+                            <input name="pass2" type="password"required autocomplete="off"/>
                         </div>
 
                         <button type="submit" class="button button-block"/>Inscription</button>
