@@ -35,21 +35,21 @@
 
                     <h1>Inscrivez-vous gratuitement et bénéficiez de tous les avantages sur nos offres.</h1>
 
-                    <form action="#" method="post">
+                    <form action="php/Inscription.php" method="post">
 
                         <div class="top-row">
                             <div class="field-wrap">
                                 <label>
                                     Nom<span class="req">*</span>
                                 </label>
-                                <input type="text" required autocomplete="off" />
+                                <input name="lastname" type="text" required autocomplete="off" />
                             </div>
 
                             <div class="field-wrap">
                                 <label>
                                     Prénom<span class="req">*</span>
                                 </label>
-                                <input type="text"required autocomplete="off"/>
+                                <input name="firstname" type="text"required autocomplete="off"/>
                             </div>
                         </div>
 
@@ -57,21 +57,21 @@
                             <label>
                                 Adresse e-mail<span class="req">*</span>
                             </label>
-                            <input type="email"required autocomplete="off"/>
+                            <input name="email" type="email"required autocomplete="off"/>
                         </div>
 
                         <div class="field-wrap">
                             <label>
                                 Mot de passe<span class="req">*</span>
                             </label>
-                            <input type="password"required autocomplete="off"/>
+                            <input name="pass" type="password"required autocomplete="off"/>
                         </div>
 
                         <div class="field-wrap">
                             <label>
                                 Confirmez votre mot de passe<span class="req">*</span>
                             </label>
-                            <input type="password"required autocomplete="off"/>
+                            <input name="pass2" type="password"required autocomplete="off"/>
                         </div>
 
                         <button type="submit" class="button button-block"/>Inscription</button>
@@ -85,20 +85,20 @@
             <div id="login">   
                 <h1>Bienvenue ! <br> Accédez à votre compte</h1>
 
-                <form action="/" method="post">
+                <form action="php/connexion.php" method="post">
 
                     <div class="field-wrap">
                         <label>
                             Adresse e-mail<span class="req">*</span>
                         </label>
-                        <input type="email"required autocomplete="off"/>
+                        <input name="email3" type="email"required autocomplete="off"/>
                     </div>
 
                     <div class="field-wrap">
                         <label>
                             Mot de passe<span class="req">*</span>
                         </label>
-                        <input type="password"required autocomplete="off"/>
+                        <input name="pass3" type="password"required autocomplete="off"/>
                     </div>
 
                     <p class="forgot"><a href="#">Mot de passe oublé?</a></p>
