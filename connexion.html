@@ -1,3 +1,11 @@
+<?php
+if (!empty($_POST)) {
+    require 'php/DB_LINK.php';
+    $stmt = $dbh->prepare('INSERT INTO `user`(`last name`, `first name`, `email`, `password`) VALUES (:lastname,:firstname,:email, :password)');
+$stmt->execute([':lastname' => $_POST['lastname'],':firstname'=> $_POST['firstname'], ':password' => $_POST['pass'], ':email' => $_POST['email']]);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="">
     <head>

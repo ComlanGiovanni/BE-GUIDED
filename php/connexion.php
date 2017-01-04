@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 if (!empty($_POST)) {
     require 'DB_LINK.php';
     $stmt = $dbh->prepare('SELECT * FROM `user` WHERE `email` = :email AND `password` = :pass');
@@ -17,3 +18,11 @@ if (!empty($_POST)) {
         echo('Identifiant incorrect');
     }
 }
+=======
+/**
+ * Created by PhpStorm.
+ * User: Laurent
+ * Date: 04/01/2017
+ * Time: 14:02
+ */
+>>>>>>> 7112b3f7a1eb03627ffafe92ea93c60c5302125b
