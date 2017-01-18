@@ -11,7 +11,7 @@ if (!empty($_POST)) {
         $_SESSION = $a;
         var_dump($_SESSION);
         $_SESSION['connected'] = true;
-        header('Location: ../index.html');
+        header('Location: ../index.php');
     }
     else {
         echo('Identifiant incorrect');
