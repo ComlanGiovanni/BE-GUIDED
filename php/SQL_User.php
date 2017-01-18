@@ -25,7 +25,7 @@ class SQL_User
     {
         if ($params) {
             $req = $this->dbh->prepare($query);
-            $req->execute($params);
+            $req->execute($params) or die ( print_r($req->errorInfo()) );
         } else {
             $req = $this->dbh->query($query);
         }
@@ -36,18 +36,20 @@ class SQL_User
     public function inscription()
     {
         if (!empty($_POST)) {
+            $al = [];
+            $af = [];
             $ae = [];
-            $an = [];
-            $all_name = $this->query('SELECT user_name, email FROM `user`')->fetchAll();
+            $all_name = $this->query('SELECT lastname, firstname, email FROM `users`')->fetchAll();
             foreach ($all_name as $a) {
-                array_push($an, $a['user_name']);
+                array_push($al, $a['lastname']);
+                array_push($af, $a['firstname']);
                 array_push($ae, $a['email']);
             }
-            if (in_array(htmlspecialchars($_POST['username']), $an) or in_array(htmlspecialchars($_POST['email']), $ae)) {
+            if ((in_array(htmlspecialchars($_POST['lastname']), $al) and in_array(htmlspecialchars($_POST['firstname']), $af)) or in_array(htmlspecialchars($_POST['email']), $ae)) {
                 echo '<div class="alert">Votre Nom d\'utilisateur et/ou email est déjà utilisé ! Veuillez changer.</div>';
             } else {
-                $this->query('INSERT INTO `user`(`user_name`, `password`, `email`) VALUES (:name, :password, :email)',
-                    [':name' => htmlspecialchars($_POST['username']), ':password' => crypt(htmlspecialchars($_POST['pass']), '$5$rounds=2000$usesomesillystringforsalt$'), ':email' => htmlspecialchars($_POST['email'])]);
+                $this->query('INSERT INTO users(lastname, firstname, password, email) VALUES (:lname, :fname, :password, :email)',
+                    [':lname' => htmlspecialchars($_POST['lastname']), ':fname' => htmlspecialchars($_POST['firstname']), ':password' => crypt(htmlspecialchars($_POST['pass']), '$5$rounds=2000$salt$'), ':email' => htmlspecialchars($_POST['email'])]);
                 header('Location: connexion.php');
             }
         }
@@ -57,17 +59,17 @@ class SQL_User
     {
         if (!empty($_POST)) {
 
-            $a = $this->query('SELECT * FROM `user` WHERE (`user_name` = :login OR email = :email )AND `password` = :pass',
-                [':login' => htmlspecialchars($_POST['login']), ':email' => htmlspecialchars($_POST['login']), ':pass' => crypt(htmlspecialchars($_POST['pass']), '$5$rounds=2000$usesomesillystringforsalt$')])->fetchAll();
+            $a = $this->query('SELECT id_user, lastname FROM `users` WHERE email = :email AND `password` = :pass',
+                [':email' => htmlspecialchars($_POST['email']), ':pass' => crypt(htmlspecialchars($_POST['pass']), '$5$rounds=2000$salt$')])->fetchAll();
             if (count($a) > 0) {
                 $_SESSION['connected'] = true;
                 $_SESSION['id_user'] = $a[0]['id_user'];
-                if ($a[0]['user_name'] === 'admin') {
+                if ($a[0]['lastname'] === 'admin') {
                     $_SESSION['admin'] = true;
                 } else {
                     $_SESSION['admin'] = false;
                 }
-                header('Location: profile.php');
+                header('Location: index.php');
             } else {
                 echo '<div class="alert">Vos identifiants sont incorrects !</div>';
             }
@@ -78,7 +80,7 @@ class SQL_User
     {
         session_unset();
         session_destroy();
-        header('Location: index.php');
+        header('Location: ../index.php');
     }
 
     public function view_profile()
@@ -86,12 +88,12 @@ class SQL_User
         if (!$_SESSION['connected']) {
             header('Location: connexion.php');
         } else {
-            $v = $this->query('SELECT * FROM `user` WHERE `id_user` = :id',
+            $v = $this->query('SELECT * FROM `users` WHERE `id_user` = :id',
                 [':id' => $_SESSION['id_user']])->fetchAll();
             if (!empty($_POST)) {
-                $this->query('UPDATE `user` SET `user_name`= :name,`password`= :password,`email`= :email WHERE `id_user` = :id',
-                    [':name' => htmlspecialchars($_POST['name']), ':password' => crypt(htmlspecialchars($_POST['password']), '$5$rounds=2000$usesomesillystringforsalt$'), ':email' => htmlspecialchars($_POST['email']), ':id' => $_SESSION['id_user']]);
-                header('Location: profile.php');
+                $this->query('UPDATE `users` SET `lastname`= :lname, firstname= :fname, `password`= :password,`email`= :email WHERE `id_user` = :id',
+                    [':lname' => htmlspecialchars($_POST['name']), ':fname' => htmlspecialchars($_POST['firstname']), ':password' => crypt(htmlspecialchars($_POST['password']), '$5$rounds=2000$salt$'), ':email' => htmlspecialchars($_POST['email']), ':id' => $_SESSION['id_user']]);
+                header('Location: account.php');
             }
         }
         return $v;
