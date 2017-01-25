@@ -1,6 +1,8 @@
 <?php
 require 'SQL_User.php';
+require 'SQL_Offer.php';
 $req = new SQL_User('root', '', 'be');
+$of = new SQL_Offer('root', '', 'be');
 ?>
 
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -11,7 +13,7 @@ $req = new SQL_User('root', '', 'be');
                 <i class="fa fa-bars"></i>
             </button>
 
-            <a class="navbar-brand page-scroll" href="#page-top">
+            <a class="navbar-brand page-scroll" href="index.php">
 
                 <span><img src="img/lg.png" width="50px" height="40" style="margin: -12px 0px 0px 0px" alt=""><span class="light">Guide </span> <span style="color:red;">ME</span> !</span></a>
         </div>
@@ -23,7 +25,7 @@ $req = new SQL_User('root', '', 'be');
                 <?php if (!isset($_SESSION['connected'])) {
                     echo '
                 <li class="hidden">
-                    <a href="#page-top"></a>
+                    <a href="index.php"></a>
                 </li>
                 <li>
                     <a class="page-scroll" href="inscription.php"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Inscription</a>

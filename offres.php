@@ -1,8 +1,4 @@
 <?php 
-require 'php/SQL_User.php';
-require 'php/SQL_Offer.php';
-
-$of = new SQL_Offer('root', '', 'be');
 
 
 ?>
@@ -18,11 +14,13 @@ $of = new SQL_Offer('root', '', 'be');
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto|Poppins" rel="stylesheet">
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
         <link rel="stylesheet" href="css/offres.css">
         <title>Offres | Guide ME !</title>
     </head>
     <body>
-        <?  ?>
+    <a href="javascript:document.location.href='#myModal'"></a>
+        <?php include 'php/nav.php'; ?>
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
