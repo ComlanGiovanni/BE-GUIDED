@@ -1,5 +1,4 @@
 <?php
-session_start();
 ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
 
@@ -34,20 +33,21 @@ class SQL_Offer
 
     public function view_offer()
     {
-        $v = $this->query('SELECT * FROM `offers` WHERE `id_offer` = :id',
+        $v = $this->query('SELECT * FROM users LEFT JOIN offers ON users.id_user = offers.id_user WHERE `id_offer` = :id',
             [':id' => $_GET['id']])->fetchAll();
         return $v;
     }
 
     public function list_offer()
     {
-        $i = $this->query('SELECT id_offer,name_offer,price,description,city,img_offer,id_user FROM offers ORDER BY id_offer DESC')->fetchAll();
-        foreach ($i as $img) {
+        $i = $this->query('SELECT * FROM users LEFT JOIN offers ON users.id_user = offers.id_user ORDER BY users.id_user DESC')->fetchAll();
+        foreach ($i as $inf) {
             echo '<tr>
-                <td><img src="' . $img['img_offer'] . '" height="200px" width="200px" alt=""></td>
-                <td>' . $img['city'] . '</td>
-                <td><h4>' . $img['name_offer'] .'</h4><br><br><p>' . $img['description'] .'</p></td>
-                <td> ' . $img['price'] . ' €</td>
+                <td><img src="' . $inf['img_offer'] . '" height="200px" width="200px" alt=""></td>
+                <td>' . $inf['city'] . '</td>
+                <td>' . $inf['lastname'] . ' ' . $inf['firstname'] . '</td>
+                <td><h4>' . $inf['name_offer'] .'</h4><br><p>' . $inf['description'] .'</p></td>
+                <td> ' . $inf['price'] . ' €</td>
                 </tr>';
         }
     }
