@@ -1,6 +1,6 @@
 <?php
 require 'SQL_User.php';
-require 'SQL_Offer.php';
+require_once 'SQL_Offer.php';
 $req = new SQL_User('root', '', 'be');
 $of = new SQL_Offer('root', '', 'be');
 ?>
@@ -46,7 +46,7 @@ $of = new SQL_Offer('root', '', 'be');
                     <ul class="dropdown-menu" aria-labelledby="drop2"> 
                         <li><a href="account.php">Mon compte</a></li> 
                         <li><a href="#">Devenir Guide</a></li> 
-                        <li><a href="#"></a></li> 
+                        <li><a href="create_offer.php">Creer une offre</a></li> 
                         <li role="separator" class="divider"></li> 
                         <li><a href="php/deconnexion.php">Déconnexion</a></li> 
                     </ul>

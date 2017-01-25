@@ -48,9 +48,14 @@ class SQL_User
             if ((in_array(htmlspecialchars($_POST['lastname']), $al) and in_array(htmlspecialchars($_POST['firstname']), $af)) or in_array(htmlspecialchars($_POST['email']), $ae)) {
                 echo '<div class="alert">Votre Nom d\'utilisateur et/ou email est déjà utilisé ! Veuillez changer.</div>';
             } else {
-                $this->query('INSERT INTO users(lastname, firstname, password, email) VALUES (:lname, :fname, :password, :email)',
-                    [':lname' => htmlspecialchars($_POST['lastname']), ':fname' => htmlspecialchars($_POST['firstname']), ':password' => crypt(htmlspecialchars($_POST['pass']), '$5$rounds=2000$salt$'), ':email' => htmlspecialchars($_POST['email'])]);
-                header('Location: connexion.php');
+                if ($_POST['pass'] == $_POST['pass2']) {
+                    $this->query('INSERT INTO users(lastname, firstname, password, email) VALUES (:lname, :fname, :password, :email)',
+                        [':lname' => htmlspecialchars($_POST['lastname']), ':fname' => htmlspecialchars($_POST['firstname']), ':password' => crypt(htmlspecialchars($_POST['pass']), '$5$rounds=2000$salt$'), ':email' => htmlspecialchars($_POST['email'])]);
+                    header('Location: connexion.php');
+                }
+                else {
+                    echo '<div class="alert">Les mots de passe ne correspondent pas ! Veuillez réessayer.</div>';
+                }
             }
         }
     }
