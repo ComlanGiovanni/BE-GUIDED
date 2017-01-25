@@ -1,5 +1,8 @@
 <?php 
+require 'php/SQL_User.php';
+require 'php/SQL_Offer.php';
 
+$of = new SQL_Offer('root', '', 'be');
 
 
 ?>
@@ -36,73 +39,16 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>N° Offre/Lieu</th>
+                        <th></th>
+                        <th>Lieu</th>
+                        <th>Proposé par :</th>
                         <th>Offre</th>
-                        <th>Description</th>
-                        <th>Détails</th>
+                        <th>Prix</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1 | Paris</th>
-                        <td><a href="">Lorem</a></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                        <td>Prix:  <button type="button" class="btn btn-primary">000€</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2 | Paris</th>
-                        <td><a href="">Lorem</a></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                        <td>Prix:  <button type="button" class="btn btn-success">000€</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3 | Paris</th>
-                        <td><a href="">Lorem</a></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                        <td>Prix:  <button type="button" class="btn btn-info">000€</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4 | Paris</th>
-                        <td><a href="">Lorem</a></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                        <td>Prix:  <button type="button" class="btn btn-warning">000€</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5 | Paris</th>
-                        <td><a href="">Lorem</a></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                        <td>Prix:  <button type="button" class="btn btn-danger">000€</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">6 | Paris</th>
-                        <td><a href="">Lorem</a></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                        <td>Prix:  <button type="button" class="btn btn-info">000€</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">7 | Paris</th>
-                        <td><a href="">Lorem</a></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                        <td>Prix:  <button type="button" class="btn btn-success">000€</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">8 | Paris</th>
-                        <td><a href="">Lorem</a></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                        <td>Prix:  <button type="button" class="btn btn-warning">000€</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">9 | Paris</th>
-                        <td><a href="">Lorem</a></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                        <td>Prix:  <button type="button" class="btn btn-primary">000€</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">10 | Paris</th>
-                        <td><a href="">Lorem</a></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                        <td>Prix:  <button type="button" class="btn btn-danger">000€</button></td>
-                    </tr>
+                <?php  $of->list_offer(); ?>
                 </tbody>
             </table>
         </div>
