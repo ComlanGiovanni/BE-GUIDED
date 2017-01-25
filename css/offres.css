@@ -1,0 +1,51 @@
+#imaginary_container{
+    margin-top:30%; /* Don't copy this */
+    margin-bottom: 30%;
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+.container {
+background: url('../img/bck.jpg') center center no-repeat ;
+width:100%;
+height: 100%;
+}
+
+.data-item .data-img {
+    padding: 0;
+    max-height: 155px;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+}
+.col-30 {
+    width: 30%;
+}
+
+.table.table.table-hover {
+    
+    margin-right: 5%;
+}
+a:hover {
+    color: #23527c;
+    text-decoration: none;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
