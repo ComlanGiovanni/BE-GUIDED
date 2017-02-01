@@ -48,7 +48,7 @@
                     <label>
                         Mot de passe<span class="req">*</span>
                     </label>
-                    <input name="pass" type="password" required/>
+                    <input id="pass" name="pass" type="password" required/>
                 </div>
 
                 <p class="forgot"><a href="#">Mot de passe oublé?</a></p>

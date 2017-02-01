@@ -40,7 +40,7 @@ class SQL_Offer
 
     public function list_offer()
     {
-        $i = $this->query('SELECT * FROM users LEFT JOIN offers ON users.id_user = offers.id_user ORDER BY users.id_user DESC')->fetchAll();
+        $i = $this->query('SELECT * FROM users INNER JOIN offers ON users.id_user = offers.id_user ORDER BY users.id_user DESC')->fetchAll();
         foreach ($i as $inf) {
             echo '<tr>
                 <td><img src="' . $inf['img_offer'] . '" height="200px" width="200px" alt=""></td>

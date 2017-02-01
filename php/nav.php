@@ -44,9 +44,16 @@ $of = new SQL_Offer('root', '', 'be');
                 <li class="dropdown"> 
                     <a href="#" class="dropdown-toggle" id="drop2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Mon profil <span class="caret"></span> </a> 
                     <ul class="dropdown-menu" aria-labelledby="drop2"> 
-                        <li><a href="account.php">Mon compte</a></li> 
-                        <li><a href="#">Devenir Guide</a></li> 
-                        <li><a href="create_offer.php">Creer une offre</a></li>
+                        <li><a href="account.php">Mon compte</a></li>';
+                        if (!isset($_SESSION['guide'])) {
+
+                        echo '<li><a href="memberpg.php">Devenir Guide</a></li>';
+                    }
+                    else {
+                        echo '<li><a href="create_offer.php">Creer une offre</a></li>';
+                    }
+
+                        echo '
                          <li><a href="offres.php">Voir les offres</a></li>
                         <li role="separator" class="divider"></li> 
                         <li><a href="php/deconnexion.php">Déconnexion</a></li> 
