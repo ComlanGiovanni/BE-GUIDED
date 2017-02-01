@@ -35,6 +35,8 @@
 <a href="javascript:document.location.href='#myModal'"></a>
 <?php include 'php/nav.php';
 $v = $req->view_profile();?>
+<div style="height: 100px; background: #000;">
+</div>
 <div>
     <p>
     <h3 style=" font-size: 20px;margin-top:  30px; margin-bottom:-30px; color:white; text-transform:uppercase; font-weight:bold;"

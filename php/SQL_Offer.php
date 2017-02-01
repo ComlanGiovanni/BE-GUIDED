@@ -48,7 +48,7 @@ class SQL_Offer
                 <td>' . $inf['lastname'] . ' ' . $inf['firstname'] . '</td>
                 <td><h4>' . $inf['name_offer'] . '</h4><br><p>' . $inf['description'] . '</p></td>
                 <td> <button type="button" class="btn btn-primary">' . $inf['price'] . '</button> €</td>
-                <td><button type="button" class="btn btn-primary"><a href="viewoffres.php?id="' . $inf['id_offer'] . '></a></button></td>
+                <td><button type="button" class="btn btn-primary"><a href="view.php?id=' . $inf['id_offer'] . '">Voir Plus</a></button></td>
                 </tr>';
         }
     }

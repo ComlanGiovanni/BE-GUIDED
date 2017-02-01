@@ -171,7 +171,7 @@
                         <li data-target="#custom_carousel" data-slide-to="2"><a href="#"><img src="http://placehold.it/50x50"><small>Offre 3</small></a></li>
                         <li data-target="#custom_carousel" data-slide-to="3"><a href="#"><img src="http://placehold.it/50x50"><small>Offre 4</small></a></li>
                         <br><br>
-                        <div class="lienoffres"><a href="offres.php">Plus d'offres</a></div>
+                        <div class="lienoffres"><a href="offres.html">Plus d'offres</a></div>
                     </ul>
                 </div>
             </div>

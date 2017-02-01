@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -34,46 +38,36 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <!-- Navigation -->
 <a href="javascript:document.location.href='#myModal'"></a>
-<?php include 'php/nav.php';
-$of->create_offer();
-?>
+<?php include 'php/nav.php'; ?>
+<?php $info = $of->view_offer(); ?>
 <div style="height: 100px; background: #000;">
 </div>
-<div class="container">
-    <form method="post" action="#" enctype="multipart/form-data">
-        <div class="form-group col-md-offset-1 col-md-10">
-            <label for="title">Nom</label>
-            <input type="text" class="form-control" id="title" name="title" placeholder="Nom de votre offre">
+<div class="container-fluid">
+    <div class="row">
+        <h1> <?php echo $info[0]['name_offer']; ?></h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <?php echo '<img src="users/user_' . $_SESSION['id_user'] . '/' . $info[0]['img_offer'] . '" alt="no img">'; ?>
         </div>
-        <div class="form-group col-md-offset-1 col-md-10">
-            <label for="desc">Description</label>
-            <input type="text" class="form-control" id="desc" name="desc" placeholder="Décrivez votre offre">
+        <div class="col-md-4 col-md-offset-8">
+            <h5>Prix :</h5>
+            <br> <?php echo $info[0]['price']; ?>
+            <br>
+            <button>Ajouter au Panier</button>
         </div>
-        <div class="form-group col-md-offset-1 col-md-2">
-            <label for="ville">Ville</label>
-            <input type="text" class="form-control" id="ville" name="city" placeholder="Ville">
+    </div>
+    <div class="row">
+        <div>
+            <p><?php echo $info[0]['description']; ?></p>
         </div>
-        <div class="form-group col-md-6">
-            <label for="adresse">Lieux de rencontre</label>
-            <input type="text" class="form-control" id="adresse" name="adr" placeholder="Lieux de rencontre">
+        <div>
+            <p><?php echo $info[0]['place_offer'] . ' ' . $info[0]['city']; ?></p>
+            <br>
+            <p><?php echo $info[0]['dispo_offer']; ?></p>
         </div>
-        <div class="form-group col-md-2">
-            <label for="price">Prix</label>
-            <input type="number" step="0.01" min="0" class="form-control" id="price" name="price" placeholder="Prix">
-        </div>
-        <div class="form-group col-md-offset-1 col-md-10">
-            <label for="dsp">Disponibilité de l'offre</label>
-            <input type="text" class="form-control" id="dsp" name="dsp" placeholder="Vos Disponibilités">
-        </div>
-        <div class="form-group col-md-offset-1 col-md-10">
-            <label for="img">Image de description</label>
-            <input type="file" id="img" name="img">
-        </div>
-
-        <button type="submit" class="btn btn-default col-md-offset-5 col-md-2">Créer votre offre</button>
-    </form>
+    </div>
 </div>
-
 <?php include 'php/footer.php'; ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -139,14 +133,13 @@ $of->create_offer();
         }
     }
 </script>
-</div>
+
 <script src="js/bootstrap.min.js"></script>
 <!-- Fin footer -->
 <a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-arrow-up"></i></a>
 <!-- jQuery -->
 <script src="vendor/jquery/jquery.js"></script>
-</div>
-</div>
+
 <!-- Bootstrap Core JavaScript -->
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -160,3 +153,4 @@ $of->create_offer();
 <!-- Theme JavaScript -->
 <script src="js/project.min.js"></script>
 </body>
+</html>
