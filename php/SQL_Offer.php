@@ -40,15 +40,29 @@ class SQL_Offer
 
     public function list_offer()
     {
-        $i = $this->query('SELECT * FROM users INNER JOIN offers ON users.id_user = offers.id_user ORDER BY users.id_user DESC')->fetchAll();
+        $i = $this->query('SELECT * FROM users INNER JOIN offers ON users.id_user = offers.id_user ORDER BY offers.date_publication DESC')->fetchAll();
         foreach ($i as $inf) {
             echo '<tr>
-                <td><img src="' . $inf['img_offer'] . '" height="200px" width="200px" alt=""></td>
+                <td><img src="users/user_' . $inf['id_user']. '/' . $inf['img_offer'] . '" height="200px" width="200px" alt=""></td>
                 <td>' . $inf['city'] . '</td>
                 <td>' . $inf['lastname'] . ' ' . $inf['firstname'] . '</td>
                 <td><h4>' . $inf['name_offer'] . '</h4><br><p>' . $inf['description'] . '</p></td>
                 <td> <button type="button" class="btn btn-primary">' . $inf['price'] . '</button> €</td>
                 <td><button type="button" class="btn btn-primary"><a href="view.php?id=' . $inf['id_offer'] . '">Voir Plus</a></button></td>
+                </tr>';
+        }
+    }
+    public function view_private()
+    {
+        $v = $this->query('SELECT * FROM offers WHERE `id_user` = :id', [':id' => $_SESSION['id_user']])->fetchAll();
+        foreach ($v as $inf) {
+            echo '<tr>
+                <td><img src="users/user_' . $inf['id_user']. '/' . $inf['img_offer'] . '" height="200px" width="200px" alt=""></td>
+                <td>' . $inf['city'] . '</td>
+                <td><h4>' . $inf['name_offer'] . '</h4><br><p>' . $inf['description'] . '</p></td>
+                <td>' . $inf['price'] . ' €</td>
+                <td>' . $inf['date_publication'] . '</td>
+                <td><button type="button" class="btn btn-primary"><a href="modif.php?id=' . $inf['id_offer'] . '">Modifier</a></button></td>
                 </tr>';
         }
     }

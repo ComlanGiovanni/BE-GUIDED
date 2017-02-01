@@ -50,7 +50,8 @@ $of = new SQL_Offer('root', '', 'be');
                         echo '<li><a href="memberpg.php">Devenir Guide</a></li>';
                     }
                     else {
-                        echo '<li><a href="create_offer.php">Creer une offre</a></li>';
+                        echo '<li><a href="create_offer.php">Creer une offre</a></li>
+                               <li><a href="my_offer.php">Gerer mes offres</a></li>';
                     }
 
                         echo '

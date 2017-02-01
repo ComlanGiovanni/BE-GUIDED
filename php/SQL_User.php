@@ -110,6 +110,7 @@ class SQL_User
                 [':id' => htmlspecialchars($_SESSION['id_user']), ':city' => $_POST['city'],
                     ':ptc' => htmlspecialchars($_POST['cdp']), ':add' => htmlspecialchars($_POST['address']),
                     ':lang' => htmlspecialchars($lang), ':hobbies' => htmlspecialchars($hobbies), ':mobil' => htmlspecialchars($_POST['numTel'])]);
+            $_SESSION['guide'] = true;
         }
     }
 
