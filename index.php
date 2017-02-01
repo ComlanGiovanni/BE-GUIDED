@@ -171,7 +171,7 @@
                         <li data-target="#custom_carousel" data-slide-to="2"><a href="#"><img src="http://placehold.it/50x50"><small>Offre 3</small></a></li>
                         <li data-target="#custom_carousel" data-slide-to="3"><a href="#"><img src="http://placehold.it/50x50"><small>Offre 4</small></a></li>
                         <br><br>
-                        <div class="lienoffres"><a href="offres.html">Plus d'offres</a></div>
+                        <div class="lienoffres"><a href="offres.php">Plus d'offres</a></div>
                     </ul>
                 </div>
             </div>
@@ -180,75 +180,31 @@
         <!-- Fin -->
         <?php include 'php/footer.php'; ?>
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-            <script src="/public/js/bootstrap/3.3.5/bootstrap.min.js"></script>
-            <script src="/public/js/min/sugarsync-helpers.js"></script>
-            <link rel="gettext" type="application/json" href="/public/js/LC_MESSAGES/sstranslate-fr.json">
-            <script language="javascript" src="/public/js/min/gettext.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="/public/js/bootstrap/3.3.5/bootstrap.min.js"></script>
+        <script src="/public/js/min/sugarsync-helpers.js"></script>
+        <link rel="gettext" type="application/json" href="/public/js/LC_MESSAGES/sstranslate-fr.json">
+        <script language="javascript" src="/public/js/min/gettext.js"></script>
 
-            <script src="/public/js/min/sugarsync-pricing.js?1479818852"></script>
-            <script src="/public/js/min/jquery.scrollTo.min.js"></script>
-            <script src="/public/js/min/new-home.js?1479818852"></script>
-            <script src="/public/js/min/urlEncode.js"></script>
-            <script src="/public/js/min/sugarsync-signup.js?1479818852"></script>
-
-            <script type="text/javascript">
-                var gt = new Gettext({ "domain" : "sstranslate" });
-                function _ (msgid) { return gt.gettext(msgid); }
+        <script src="/public/js/min/sugarsync-pricing.js?1479818852"></script>
+        <script src="/public/js/min/jquery.scrollTo.min.js"></script>
+        <script src="/public/js/min/new-home.js?1479818852"></script>
+        <script src="/public/js/min/urlEncode.js"></script>
+        <script src="/public/js/min/sugarsync-signup.js?1479818852"></script>
 
 
-                $("#language").change(function () {
-                    var langs = ["en", "jp", "fr", "de", "es"];
-                    var languageSelected = this.value;
-                    var url = window.location;
-                    var pieces = url.toString().split("/");
-                    if( langs.indexOf(pieces[3]) != -1 ) {
-                        pieces[3] = languageSelected;
-                    } 
-                    else {
-                        pieces.unshift("dummy");
-                        pieces[0] = pieces[1];
-                        pieces[1] = pieces[2];
-                        pieces[2] = pieces[3];
-                        pieces[3] = languageSelected;
-                    }
-                    window.location.href = pieces.join('/');
-                });
-
-                $('body :not(script) :not(iframe)').contents().filter(function() {
-                    return this.nodeType === 3;
-                }).replaceWith(function() {
-                    return this.nodeValue.replace(/[<sup>™</sup><sup>®</sup>]/g, '<sup>$&amp;</sup>');
-                });
-
-
-                $('#try-sugarsync-free').click( function(){
-                    if( $('#signUp').length ) {
-                        $(window).scrollTo( $('#signUp'), 800, {offset: -100} );
-                    }
-                    else {
-                        window.location.href = $(this).data( "href" );
-                    }
-                });
-
-                function setActiveStyleSheet(title) {
-                    var i, a, main;
-                    for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
-                        if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) {
-                            a.disabled = true;
-                            if(a.getAttribute("title") == title) a.disabled = false;
-                        }
-                    }
-                }
-            </script>
         </div>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Fin footer -->
-        <a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-arrow-up"></i></a>
-        <!-- jQuery -->
-        <script src="vendor/jquery/jquery.js"></script>
-        </div>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Fin footer -->
+    <a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-arrow-up"></i></a>
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.js"></script>        <script src="js/bootstrap.min.js"></script>
+    <!-- Fin footer -->
+    <a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-arrow-up"></i></a>
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.js"></script>
     </div>
+</div>
 <!-- Bootstrap Core JavaScript -->
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -257,6 +213,18 @@
 
 <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+<!-- Theme JavaScript -->
+<script src="js/project.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+<!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Theme JavaScript -->
 <script src="js/project.min.js"></script>
