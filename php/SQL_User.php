@@ -90,7 +90,7 @@ class SQL_User
 
     public function view_profile()
     {
-        if (!$_SESSION['connected']) {
+        if (!isset($_SESSION['connected'])) {
             header('Location: connexion.php');
         } else {
             $v = $this->query('SELECT * FROM `users` WHERE `id_user` = :id',
