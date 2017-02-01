@@ -69,7 +69,7 @@ class SQL_Offer
 
     public function create_offer()
     {
-        if (isset($_FILES['img'])) {
+        if (!isset($_FILES)) {
             $finfo = finfo_open(FILEINFO_MIME_TYPE); // Vérifie le type MIME du fichier
             $mime = finfo_file($finfo, $_FILES['img']['tmp_name']); // Regarde dans ce fichier le type MIME
             finfo_close($finfo); // Fermeture de la lecture
@@ -96,7 +96,7 @@ class SQL_Offer
             $this->query('INSERT INTO offers VALUES (NULL, :name, :city, :place, :dispo, :desc, NOW(), NOW(), :price, :img, :id_u)',
                 [':name' => $_POST['title'], ':city' => $_POST['city'], ':place' => $_POST['adr'], ':dispo' => $_POST['dsp'],
                     ':desc' => $_POST['desc'], ':price' => $_POST['price'], ':img' => $img, ':id_u' => $_SESSION['id_user']]);
-            header('Location: index.php');
+            header('Location: my_offer.php');
         }
     }
 
