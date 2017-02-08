@@ -1,8 +1,8 @@
 <?php
 require_once 'SQL_User.php';
 require_once 'SQL_Offer.php';
-$req = new SQL_User('root', '', 'be');
-$of = new SQL_Offer('root', '', 'be');
+$req = new SQL_User('root', '', 'be-guided');
+$of = new SQL_Offer('root', '', 'be-guided');
 ?>
 
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">

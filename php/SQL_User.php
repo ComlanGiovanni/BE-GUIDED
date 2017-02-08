@@ -71,6 +71,7 @@ class SQL_User
                 $_SESSION['id_user'] = $a[0]['id_user'];
                 if (count($b) > 0) {
                     $_SESSION['guide'] = true;
+                    $_SESSION['id_guide'] = $b[0]['id_guide'];
                 }
                 header('Location: index.php');
             } else {
@@ -105,7 +106,7 @@ class SQL_User
                 $_POST['langue5'] . " " . $_POST['langue6'];
             $hobbies = $_POST['inter1'] . " " . $_POST['inter2'] . " " . $_POST['inter3'] . " " . $_POST['inter4'] . " " .
                 $_POST['inter5'];
-            $this->query('INSERT INTO guide(id_user, city, postal_code, address, language, hobbies, num_mobile)
+            $this->query('INSERT INTO guide(id_user, city, postal_code, address, languages, hobbies, num_mobile)
               VALUES (:id, :city, :ptc, :add, :lang, :hobbies, :mobil)',
                 [':id' => htmlspecialchars($_SESSION['id_user']), ':city' => $_POST['city'],
                     ':ptc' => htmlspecialchars($_POST['cdp']), ':add' => htmlspecialchars($_POST['address']),

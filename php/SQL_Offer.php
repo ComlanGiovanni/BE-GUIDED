@@ -40,27 +40,27 @@ class SQL_Offer
 
     public function list_offer()
     {
-        $i = $this->query('SELECT * FROM users INNER JOIN offers ON users.id_user = offers.id_user ORDER BY offers.date_publication DESC')->fetchAll();
+        $i = $this->query('SELECT * FROM users,guide,offers WHERE guide.id_user = users.id_user AND offers.id_guide = guide.id_guide ORDER BY offers.date_publication DESC')->fetchAll();
         foreach ($i as $inf) {
             echo '<tr>
-                <td><img src="users/user_' . $inf['id_user']. '/' . $inf['img_offer'] . '" height="200px" width="200px" alt=""></td>
-                <td>' . $inf['city'] . '</td>
+                <td><img src="guides/guide_' . $inf['id_guide']. '/' . $inf['img_offer'] . '" height="200px" width="200px" alt=""></td>
+                <td>' . $inf['city_offer'] . '</td>
                 <td>' . $inf['lastname'] . ' ' . $inf['firstname'] . '</td>
                 <td><h4>' . $inf['name_offer'] . '</h4><br><p>' . $inf['description'] . '</p></td>
-                <td> <button type="button" class="btn btn-primary">' . $inf['price'] . '</button> €</td>
+                <td> <button type="button" class="btn btn-primary">' . $inf['price_offer'] . '</button> €</td>
                 <td><button type="button" class="btn btn-primary"><a href="view.php?id=' . $inf['id_offer'] . '">Voir Plus</a></button></td>
                 </tr>';
         }
     }
     public function view_private()
     {
-        $v = $this->query('SELECT * FROM offers WHERE `id_user` = :id', [':id' => $_SESSION['id_user']])->fetchAll();
+        $v = $this->query('SELECT * FROM offers WHERE `id_guide` = :id', [':id' => $_SESSION['id_guide']])->fetchAll();
         foreach ($v as $inf) {
             echo '<tr>
-                <td><img src="users/user_' . $inf['id_user']. '/' . $inf['img_offer'] . '" height="200px" width="200px" alt=""></td>
-                <td>' . $inf['city'] . '</td>
+                <td><img src="guides/guide_' . $inf['id_guide']. '/' . $inf['img_offer'] . '" height="200px" width="200px" alt=""></td>
+                <td>' . $inf['city_offer'] . '</td>
                 <td><h4>' . $inf['name_offer'] . '</h4><br><p>' . $inf['description'] . '</p></td>
-                <td>' . $inf['price'] . ' €</td>
+                <td>' . $inf['price_offer'] . ' €</td>
                 <td>' . $inf['date_publication'] . '</td>
                 <td><button type="button" class="btn btn-primary"><a href="modif.php?id=' . $inf['id_offer'] . '">Modifier</a></button></td>
                 </tr>';
@@ -79,12 +79,12 @@ class SQL_Offer
             $mime_valide = ['image/png', 'image/jpeg', 'image/gif', 'image/jpg'];
             if ((in_array($extension, $extension_valide) && in_array($mime, $mime_valide))) {
                 if ($_FILES['img']['size'] < 20971520) {
-                    $dossier = 'users/user_' . $_SESSION['id_user'];
+                    $dossier = 'guides/guide_' . $_SESSION['id_user'];
                     if (!is_dir($dossier)) {
                         mkdir($dossier);
                     }
                     move_uploaded_file($_FILES['img']['tmp_name'],
-                        'users/user_' . $_SESSION['id_user'] . '/' . $_FILES['img']['name']);
+                        'guides/guide_' . $_SESSION['id_guide'] . '/' . $_FILES['img']['name']);
                 }
             }
             $img = $_FILES['img']['name'];
@@ -93,9 +93,10 @@ class SQL_Offer
             $img = NULL;
         }
         if (!empty($_POST)) {
-            $this->query('INSERT INTO offers VALUES (NULL, :name, :city, :place, :dispo, :desc, NOW(), NOW(), :price, :img, :id_u)',
-                [':name' => $_POST['title'], ':city' => $_POST['city'], ':place' => $_POST['adr'], ':dispo' => $_POST['dsp'],
-                    ':desc' => $_POST['desc'], ':price' => $_POST['price'], ':img' => $img, ':id_u' => $_SESSION['id_user']]);
+            $this->query('INSERT INTO offers(name_offer,city_offer,postal_code_offer,place_offer,price_offer,id_guide,description,date_publication,date_modification,img_offer) 
+              VALUES (:name, :city,:cd, :place, :price, :id_g, :desc, NOW(), NOW(), :img)',
+                [':name' => $_POST['title'], ':city' => $_POST['city'], ':cd' => $_POST['dsp'], ':place' => $_POST['adr'],':price' => $_POST['price'],
+                    ':id_g' => $_SESSION['id_guide'], ':desc' => $_POST['desc'], ':img' => $img]);
             header('Location: my_offer.php');
         }
     }
