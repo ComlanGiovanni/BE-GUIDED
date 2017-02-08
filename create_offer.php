@@ -34,10 +34,11 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <!-- Navigation -->
 <a href="javascript:document.location.href='#myModal'"></a>
-<?php include 'php/nav.php'; ?><?php $of->create_offer(); ?>
+<?php include 'php/nav.php';
+$of->create_offer();
+?>
 <div style="height: 100px; background: #000;">
 </div>
-
 <div class="container">
     <form method="post" action="#" enctype="multipart/form-data">
         <div class="form-group col-md-offset-1 col-md-10">
