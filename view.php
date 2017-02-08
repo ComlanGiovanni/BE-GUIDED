@@ -52,7 +52,7 @@
         </div>
         <div class="col-md-4 col-md-offset-8">
             <h5>Prix :</h5>
-            <br> <?php echo $info[0]['price']; ?>
+            <br> <?php echo $info[0]['price_offer']; ?>
             <br>
             <button>Ajouter au Panier</button>
         </div>
@@ -62,9 +62,9 @@
             <p><?php echo $info[0]['description']; ?></p>
         </div>
         <div>
-            <p><?php echo $info[0]['place_offer'] . ' ' . $info[0]['city']; ?></p>
+            <p><?php echo $info[0]['place_offer'] . ' ' . $info[0]['city_offer']; ?></p>
             <br>
-            <p><?php echo $info[0]['dispo_offer']; ?></p>
+            <p></p>
         </div>
     </div>
 </div>
