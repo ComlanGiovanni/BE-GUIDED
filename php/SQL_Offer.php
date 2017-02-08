@@ -33,9 +33,19 @@ class SQL_Offer
 
     public function view_offer()
     {
-        $v = $this->query('SELECT * FROM users LEFT JOIN offers ON users.id_user = offers.id_user WHERE `id_offer` = :id',
+        $v = $this->query('SELECT * FROM offers WHERE id_offer = :id',
             [':id' => $_GET['id']])->fetchAll();
         return $v;
+    }
+
+    public function list_comment()
+    {
+        $q = $this->query('SELECT * FROM offers, comment WHERE comment.id_offer = offers.id_offer 
+            AND id_offer = :id',[':id'=> $_GET['id']])->fetchAll();
+        foreach ($q as $com)
+        {
+            echo '<p>Ecrit le ' . $com['date_comment'] . '</p><br><p>' . $com['msg_comment'] .'</p>';
+        }
     }
 
     public function list_offer()
@@ -52,6 +62,8 @@ class SQL_Offer
                 </tr>';
         }
     }
+
+
     public function view_private()
     {
         $v = $this->query('SELECT * FROM offers WHERE `id_guide` = :id', [':id' => $_SESSION['id_guide']])->fetchAll();
@@ -99,6 +111,24 @@ class SQL_Offer
                     ':id_g' => $_SESSION['id_guide'], ':desc' => $_POST['desc'], ':img' => $img]);
             header('Location: my_offer.php');
         }
+    }
+
+    public function modif_offer()
+    {
+        if (!isset($_SESSION['guide'])) {
+            header('Location: memberpg.php');
+        } else {
+            $v = $this->query('SELECT * FROM offers WHERE `id_offer` = :id',
+                [':id' => $_GET['id']])->fetchAll();
+            if (!empty($_POST)) {
+                $this->query('UPDATE offers SET name_offer= :name, city_offer= :city, `postal_code_offer`= :cd, place_offer = :place, price_offer = :price,
+                  description = :desc WHERE `id_offer` = :id',
+                    [':name' => $_POST['title'], ':city' => $_POST['city'], ':cd' => $_POST['dsp'], ':place' => $_POST['adr'],':price' => $_POST['price'],
+                        ':desc' => $_POST['desc'], ':id' => $_GET['id']]);
+                header('Location: my_offer.php');
+            }
+        }
+        return $v;
     }
 
     public function upload()
