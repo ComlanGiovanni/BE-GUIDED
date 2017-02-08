@@ -6,9 +6,9 @@
     background: white !important; 
 }
 .stylish-input-group .form-control{
-	border-right:0; 
-	box-shadow:0 0 0; 
-	border-color:#ccc;
+    border-right:0; 
+    box-shadow:0 0 0; 
+    border-color:#ccc;
 }
 .stylish-input-group button {
     border:0;
@@ -16,9 +16,9 @@
 }
 
 .container-fluid {
-background: url('../img/bck.jpg') center center no-repeat ;
-width:100%;
-height: 100%;
+    background: url('../img/bck.jpg') center center no-repeat ;
+    width:100%;
+    height: 100%;
 }
 
 .data-item .data-img {
@@ -37,7 +37,7 @@ height: 100%;
 }
 
 .table.table.table-hover {
-    
+
     margin-right: 5%;
 }
 a:hover {
@@ -63,9 +63,7 @@ body {
 .navbar-custom .navbar-toggle:active {
     outline: none;
 }
-.navbar-custom .navbar-brand {
-    font-weight: 700;
-}
+
 .navbar-custom .navbar-brand:focus, {
     outline: none;
 }
@@ -76,6 +74,7 @@ body {
     -webkit-transition: background 0.3s ease-in-out;
     -moz-transition: background 0.3s ease-in-out;
     transition: background 0.3s ease-in-out;
+    font-weight: 700;
 }
 .navbar-custom .nav li a:hover {
     color: rgba(255, 255, 255, 0.8);
@@ -110,4 +109,27 @@ body {
         padding: 0;
         background:rgba(0,0,0,0.8);
     }
+}
+
+@media (min-width: 768px) {
+    .navbar-custom {
+        padding: 20px 0;
+        border-bottom: none;
+        letter-spacing: 1px;
+        background:rgba(0,0,0,0.8);
+        padding: 0;
+
+    }
+    .navbar-custom.top-nav-collapse {
+        padding: 0;
+        background:rgba(0,0,0,0.8);
+    }
+}
+.navbar-custom .nav li a:hover {
+    color: #a2a2a5;
+    outline: none;
+    background-color: transparent;
+}
+.nav .open>a {
+    background-color: transparent;
 }

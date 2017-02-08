@@ -3,7 +3,7 @@ body {
     height: 100%;
     font-family: 'Poppins', sans-serif;
     color: white;
-    background-color: black;
+
 }
 html {
     width: 100%;
@@ -153,20 +153,18 @@ h6 {
     letter-spacing: 1px;
 }
 p {
-    margin: 0 0 25px;
     font-size: 18px;
     line-height: 1.5;
     font-family: 'Poppins', sans-serif;
 }
 @media (min-width: 768px) {
     p {
-        margin: 0 0 35px;
         font-size: 20px;
         line-height: 1.6;
     }
 }
 a {
-    color: #42DCA3;
+    color: #0000b2;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
@@ -174,7 +172,7 @@ a {
 a:hover,
 a:focus {
     text-decoration: none;
-    color: #1d9b6c;
+    color: #000066;
 }
 .light {
     font-weight: 400;
@@ -208,8 +206,12 @@ a:focus {
     transition: background 0.3s ease-in-out;
 }
 .navbar-custom .nav li a:hover {
-    color: rgba(255, 255, 255, 0.8);
+    color: #a2a2a5;
     outline: none;
+    background-color: transparent;
+}
+
+.nav .open>a {
     background-color: transparent;
 }
 .navbar-custom .nav li a:focus,
@@ -231,10 +233,9 @@ a:focus {
         padding: 20px 0;
         border-bottom: none;
         letter-spacing: 1px;
-        background: transparent;
-        -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-        -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-        transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+        background:rgba(0,0,0,0.8);
+        padding: 0;
+
     }
     .navbar-custom.top-nav-collapse {
         padding: 0;
@@ -250,12 +251,9 @@ a:focus {
     text-align: center;
     color: white;
     text-shadow: 4px 4px 2px rgba(76,76,76, 1);
-    background: url(../img/tourisme_paris.jpg) no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), rgba(0,0,0,0.5) url(../img/bckg4.jpg) center no-repeat;
     background-color: black;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     background-size: cover;
-    -o-background-size: cover;
 }
 .intro .intro-body {
     display: table-cell;
@@ -265,7 +263,7 @@ a:focus {
     font-size: 40px;
 }
 .intro .intro-body .intro-text {
-    font-size: 18px;
+    font-size: 500px;
 }
 @media (min-width: 768px) {
     .intro {
@@ -276,8 +274,7 @@ a:focus {
         font-size: 100px;
     }
     .intro .intro-body .intro-text {
-        font-size: 26px;
-
+        font-size: 50px;
     }
     .btn-circle {
         width: 70px;
@@ -873,6 +870,7 @@ ol, ul {
 
 }
 #footerid{
+    margin-top: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid rgb(40, 39, 39);
 }
@@ -1038,4 +1036,8 @@ Image credits: unsplash.com
     .intro .intro-body .brand-heading {
         font-size:4em;
     }
+}
+hr {
+    width: 10%;
+    border: 2px solid;
 }
