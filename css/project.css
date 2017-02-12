@@ -153,7 +153,7 @@ h6 {
     letter-spacing: 1px;
 }
 p {
-    font-size: 18px;
+    font-size: 24px;
     line-height: 1.5;
     font-family: 'Poppins', sans-serif;
 }
@@ -262,9 +262,7 @@ a:focus {
 .intro .intro-body .brand-heading {
     font-size: 40px;
 }
-.intro .intro-body .intro-text {
-    font-size: 500px;
-}
+
 @media (min-width: 768px) {
     .intro {
         height: 100%;
