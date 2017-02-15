@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 08 Février 2017 à 10:33
+-- Généré le :  Mer 15 Février 2017 à 14:45
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -23,17 +23,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `commentaires`
+-- Structure de la table `comment`
 --
 
-CREATE TABLE `commentaires` (
-  `id_commentaire` int(11) NOT NULL,
+CREATE TABLE `comment` (
+  `id_comment` int(11) NOT NULL,
   `msg_comment` text NOT NULL,
   `date_comment` date NOT NULL,
   `date_modif_comment` date DEFAULT NULL,
   `id_user` int(11) DEFAULT NULL,
   `id_offer` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `comment`
+--
+
+INSERT INTO `comment` (`id_comment`, `msg_comment`, `date_comment`, `date_modif_comment`, `id_user`, `id_offer`) VALUES
+(1, 'Ce produit est excellent', '2017-02-15', NULL, 1, 1),
+(2, 'encore ', '2017-02-15', '2017-02-15', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -91,15 +99,28 @@ CREATE TABLE `offers` (
   `date_modification` date DEFAULT NULL,
   `id_guide` int(11) DEFAULT NULL,
   `id_planning` int(11) DEFAULT NULL,
-  `id_note` int(11) DEFAULT NULL
+  `id_note` int(11) DEFAULT NULL,
+  `duration` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `offers`
 --
 
-INSERT INTO `offers` (`id_offer`, `name_offer`, `city_offer`, `postal_code_offer`, `place_offer`, `price_offer`, `description`, `img_offer`, `date_publication`, `date_modification`, `id_guide`, `id_planning`, `id_note`) VALUES
-(1, 'a', 'a', 1, 'a', 0.01, 'a', NULL, '2017-02-08', '2017-02-08', 1, NULL, NULL);
+INSERT INTO `offers` (`id_offer`, `name_offer`, `city_offer`, `postal_code_offer`, `place_offer`, `price_offer`, `description`, `img_offer`, `date_publication`, `date_modification`, `id_guide`, `id_planning`, `id_note`, `duration`) VALUES
+(1, 'a', 'a', 1, 'a', 0.04, 'a', NULL, '2017-02-08', '2017-02-08', 1, NULL, NULL, NULL),
+(2, 'test2', 'londres', 4555, '12 street blabla', 55.6, NULL, NULL, '2017-02-15', NULL, 1, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `own`
+--
+
+CREATE TABLE `own` (
+  `id_offer` int(11) NOT NULL,
+  `id_tag` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -123,6 +144,17 @@ CREATE TABLE `planning` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `tag`
+--
+
+CREATE TABLE `tag` (
+  `id_tag` int(11) NOT NULL,
+  `name_tag` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `users`
 --
 
@@ -134,25 +166,28 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `img_profil` varchar(255) DEFAULT NULL,
   `birthday_date` date DEFAULT NULL,
-  `id_guide` int(11) DEFAULT NULL
+  `id_guide` int(11) DEFAULT NULL,
+  `certificate` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id_user`, `lastname`, `firstname`, `password`, `email`, `img_profil`, `birthday_date`, `id_guide`) VALUES
-(1, 'T1', 't1', '$5$rounds=2000$salt$lhuw.ir8WwXA2z2dL1g5yy3EE5A9RT5pfEbosBeFYSD', 't@t.t', NULL, NULL, NULL);
+INSERT INTO `users` (`id_user`, `lastname`, `firstname`, `password`, `email`, `img_profil`, `birthday_date`, `id_guide`, `certificate`) VALUES
+(1, 'T1', 't1', '$5$rounds=2000$salt$lhuw.ir8WwXA2z2dL1g5yy3EE5A9RT5pfEbosBeFYSD', 't@t.t', NULL, NULL, NULL, NULL),
+(2, 'aze', 'aze', '$5$rounds=2000$salt$r2fKA3boRWXafQRCZODAb6IJTQ7DY6y/8oOu5tr4Vg/', 'aze@az.az', NULL, NULL, NULL, NULL),
+(3, 'laurent', 'panek', '$5$rounds=2000$salt$nXENdXA8cybE7hPmIjpGIzweHp.XNv90c1MGDu4Qqt3', 'laurent.panek@ynov.com', NULL, NULL, NULL, 0);
 
 --
 -- Index pour les tables exportées
 --
 
 --
--- Index pour la table `commentaires`
+-- Index pour la table `comment`
 --
-ALTER TABLE `commentaires`
-  ADD PRIMARY KEY (`id_commentaire`),
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`id_comment`),
   ADD KEY `FK_Commentaires_id_user` (`id_user`),
   ADD KEY `FK_Commentaires_id_offer` (`id_offer`);
 
@@ -180,11 +215,23 @@ ALTER TABLE `offers`
   ADD KEY `FK_Offers_id_note` (`id_note`);
 
 --
+-- Index pour la table `own`
+--
+ALTER TABLE `own`
+  ADD PRIMARY KEY (`id_offer`,`id_tag`);
+
+--
 -- Index pour la table `planning`
 --
 ALTER TABLE `planning`
   ADD PRIMARY KEY (`id_planning`),
   ADD KEY `FK_Planning_id_offer` (`id_offer`);
+
+--
+-- Index pour la table `tag`
+--
+ALTER TABLE `tag`
+  ADD PRIMARY KEY (`id_tag`);
 
 --
 -- Index pour la table `users`
@@ -198,10 +245,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT pour la table `commentaires`
+-- AUTO_INCREMENT pour la table `comment`
 --
-ALTER TABLE `commentaires`
-  MODIFY `id_commentaire` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `comment`
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `guide`
 --
@@ -216,25 +263,30 @@ ALTER TABLE `note`
 -- AUTO_INCREMENT pour la table `offers`
 --
 ALTER TABLE `offers`
-  MODIFY `id_offer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_offer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `planning`
 --
 ALTER TABLE `planning`
   MODIFY `id_planning` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT pour la table `tag`
+--
+ALTER TABLE `tag`
+  MODIFY `id_tag` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Contraintes pour les tables exportées
 --
 
 --
--- Contraintes pour la table `commentaires`
+-- Contraintes pour la table `comment`
 --
-ALTER TABLE `commentaires`
+ALTER TABLE `comment`
   ADD CONSTRAINT `FK_Commentaires_id_offer` FOREIGN KEY (`id_offer`) REFERENCES `offers` (`id_offer`),
   ADD CONSTRAINT `FK_Commentaires_id_user` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 

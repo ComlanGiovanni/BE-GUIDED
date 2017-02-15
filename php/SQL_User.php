@@ -51,12 +51,19 @@ class SQL_User
                 if ($_POST['pass'] == $_POST['pass2']) {
                     $this->query('INSERT INTO users(lastname, firstname, password, email) VALUES (:lname, :fname, :password, :email)',
                                  [':lname' => htmlspecialchars($_POST['lastname']), ':fname' => htmlspecialchars($_POST['firstname']), ':password' => crypt(htmlspecialchars($_POST['pass']), '$5$rounds=2000$salt$'), ':email' => htmlspecialchars($_POST['email'])]);
-                    header('Location: connexion.php');
+                    $msg = 'Pour valider votre compte, <a href="localhost/BE-GUIDED/emailcheck.php?id='. $_POST['email'] .'">cliquez-ici.</a>';
+                    mail($_POST['email'],'Validation Compte BE-GUIDED', $msg);
+                    header('Location: connect.php');
                 } else {
                     echo '<div class="alert alert-danger">Les mots de passe ne correspondent pas ! Veuillez réessayer.</div>';
                 }
             }
         }
+    }
+
+    public function send_check()
+    {
+        $this->query('update users set certificate = 1 WHERE email = :em',[':em' => $_GET['id']]);
     }
 
     public function connexion()
