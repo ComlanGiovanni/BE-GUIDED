@@ -119,9 +119,8 @@ AND comment.id_user = users.id_user AND offers.id_offer = :id', [':id' => $_GET[
         if (!empty($_POST)) {
             $this->query('INSERT INTO offers(name_offer,city_offer,postal_code_offer,place_offer,price_offer,id_guide,description,date_publication,date_modification,img_offer) 
               VALUES (:name, :city,:cd, :place, :price, :id_g, :desc, NOW(), NOW(), :img)',
-                [':name' => $_POST['title'], ':city' => $_POST['city'], ':cd' => $_POST['dsp'], ':place' => $_POST['adr'], ':price' => $_POST['price'],
+                [':name' => $_POST['title'], ':city' => $_POST['city'], ':cd' => $_POST['cdp'], ':place' => $_POST['adr'], ':price' => $_POST['price'],
                     ':id_g' => $_SESSION['id_guide'], ':desc' => $_POST['desc'], ':img' => $img]);
-            header('Location: my_offer.php');
         }
     }
 
