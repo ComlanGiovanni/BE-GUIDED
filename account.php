@@ -34,6 +34,8 @@
         $v = $req->view_profile();?>
         <div class="container cont">
             <h1 class="hprofil">Mon Profil</h1>
+            <hr>
+            <br>
             <div class="row">
                 <!-- left column -->
                 <div class="col-md-3">

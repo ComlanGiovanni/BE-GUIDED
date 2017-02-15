@@ -2,7 +2,7 @@ body {
     width: 100%;
     height: 100%;
     font-family: 'Poppins', sans-serif;
-    background: url("../img/bg-header.jpg") center center no-repeat;
+    background: url("../img/bckg5.JPG") center center no-repeat;
     background-size: cover;
     color: black;
 }
@@ -236,12 +236,15 @@ label {
     text-align: justify;
 }
 .cont {
-    margin-top: 150px;
+
     color:white;
+    margin-top: 150px;
     margin-bottom: 150px;
     background-color: rgba(0,0,0,.5);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
     border-radius: 3px;
-
 
 }
 .row {
@@ -253,8 +256,13 @@ label {
     .personal-info {
         border-left: 2px solid white;
     }
-
+    .hoffer  {
+        text-align: initial;
+    }
 }
 .hprofil {
     margin-top: 15px;
+}
+.btn-default{
+    text-align: center;
 }
