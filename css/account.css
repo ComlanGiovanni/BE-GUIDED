@@ -240,9 +240,12 @@ label {
     margin-top: 150px;
     color:white;
     margin-bottom: 150px;
+    background-color: rgba(0,0,0,.5);
     
 }
-
+.row {
+    padding-bottom: 25px;
+}
 
 @media (min-width: 768px){ 
 

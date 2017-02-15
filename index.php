@@ -44,16 +44,15 @@
             <div class="intro-body">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <h1 class="brand-heading"><img src="img/lg.png" alt=""></h1>
+                        <div>
+                            <img src="img/lg.png" alt=""> <br>
+                            <h1 class="brand-heading">
+                                Guide <span style="color:red;">ME</span> ! </h1>
                             <p class="intro-text">
-                                Guide <span style="color:red;">ME</span> ! </p>
-                            <hr>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nemo, consequuntur, soluta facere tempora voluptate in ex praesentium rem ad, obcaecati earum veritatis, aliquid expedita quae atque error perspiciatis saepe. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, quidem quia numquam placeat nam ea repudiandae porro, pariatur aliquam voluptas fuga, iure tempora. Fugit assumenda voluptate, dolorem tempora maiores voluptatem!
                             </p>
-
-
+                            <hr>
+                            <br>
+                            <h2>On vous fait voir la France autrement...</h2><br>
                         </div>
                     </div>
                 </div>
@@ -118,72 +117,73 @@
         </div>
         <!-- Fin_Carousel-->
         <!-- Separateur -->
-        <div style="background-color: #d5d5d5; padding: 5px; width: 100%; margin-left: auto; margin-right: auto; text-align:center;"><p>Les offres les plus intéressantes</p></div>
-        <!-- Fin_Separateur -->
-        <!-- Carousel_Offres -->
-        <div class="container-fluid">
-            <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="2500">
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
-                                <div class="col-md-9">
-                                    <h2>Offre 1</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p>
+        <div style="background-color: #d5d5d5; padding: 5px; width: 100%; margin-left: auto; margin-right: auto; "><p class="offer" style="text-align:center;">Les offres à la une</p>
+            <!-- Fin_Separateur -->
+            <!-- Carousel_Offres -->
+            <div class="container-fluid">
+                <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="2500">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
+                                    <div class="col-md-9">
+                                        <h2 class="carousel">Offre 1</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta. <br> <a href="#" class="link_offer"><i class="fa fa-arrow-right" aria-hidden="true"></i></a> </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>            
-                    </div> 
-                    <div class="item">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
-                                <div class="col-md-9">
-                                    <h2>Offre 2</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p>
+                            </div>            
+                        </div> 
+                        <div class="item">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
+                                    <div class="col-md-9">
+                                        <h2 class="carousel">Offre 2</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.  <br> <a href="#" class="link_offer"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>            
-                    </div> 
-                    <div class="item">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
-                                <div class="col-md-9">
-                                    <h2>Offre 3</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p>
+                            </div>            
+                        </div> 
+                        <div class="item">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
+                                    <div class="col-md-9">
+                                        <h2 class="carousel">Offre 3</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.  <br> <a href="#" class="link_offer"><i class="fa fa-arrow-right" aria-hidden="true"></i></a> </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>           
-                    </div> 
-                    <div class="item">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
-                                <div class="col-md-9">
-                                    <h2>Offre 4</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p>
+                            </div>           
+                        </div> 
+                        <div class="item">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
+                                    <div class="col-md-9">
+                                        <h2 class="carousel">Offre 4</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.  <br> <a href="#" class="link_offer" title="En Savoir Plus"><i class="fa fa-arrow-right" aria-hidden="true"></i></a> </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>           
-                    </div> 
-                    <!-- End Item -->
+                            </div>           
+                        </div> 
+                        <!-- End Item -->
+                    </div>
+                    <!-- End Carousel Inner -->
+                    <div class="controls">
+                        <ul class="nav">
+                            <li data-target="#custom_carousel" data-slide-to="0" class="active"><a href="#"><img src="http://placehold.it/50x50"><small>Offre 1</small></a></li>
+                            <li data-target="#custom_carousel" data-slide-to="1"><a href="#"><img src="http://placehold.it/50x50"><small>Offre 2</small></a></li>
+                            <li data-target="#custom_carousel" data-slide-to="2"><a href="#"><img src="http://placehold.it/50x50"><small>Offre 3</small></a></li>
+                            <li data-target="#custom_carousel" data-slide-to="3"><a href="#"><img src="http://placehold.it/50x50"><small>Offre 4</small></a></li>
+                            <br><br>
+                            <div class="lienoffres"><a href="offres.php" class="seloffer" >Plus d'offres</a></div>
+                        </ul>
+                    </div>
                 </div>
-                <!-- End Carousel Inner -->
-                <div class="controls">
-                    <ul class="nav">
-                        <li data-target="#custom_carousel" data-slide-to="0" class="active"><a href="#"><img src="http://placehold.it/50x50"><small>Offre 1</small></a></li>
-                        <li data-target="#custom_carousel" data-slide-to="1"><a href="#"><img src="http://placehold.it/50x50"><small>Offre 2</small></a></li>
-                        <li data-target="#custom_carousel" data-slide-to="2"><a href="#"><img src="http://placehold.it/50x50"><small>Offre 3</small></a></li>
-                        <li data-target="#custom_carousel" data-slide-to="3"><a href="#"><img src="http://placehold.it/50x50"><small>Offre 4</small></a></li>
-                        <br><br>
-                        <div class="lienoffres"><a href="offres.php">Plus d'offres</a></div>
-                    </ul>
-                </div>
+                <!-- End Carousel -->
             </div>
-            <!-- End Carousel -->
         </div>
         <!-- Fin -->
         <?php include 'php/footer.php'; ?>

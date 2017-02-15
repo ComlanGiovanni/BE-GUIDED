@@ -146,7 +146,6 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 35px;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
@@ -156,6 +155,8 @@ p {
     font-size: 24px;
     line-height: 1.5;
     font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+    text-shadow: none;
 }
 @media (min-width: 768px) {
     p {
@@ -263,13 +264,25 @@ a:focus {
     font-size: 40px;
 }
 
+.offer {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #545454;
+}
+.link_offer {
+    float: right;
+}
+
+.carousel {
+    color: #545454;
+}
 @media (min-width: 768px) {
     .intro {
         height: 100%;
         padding: 0;
     }
     .intro .intro-body .brand-heading {
-        font-size: 100px;
+        font-size: 70px;
     }
     .intro .intro-body .intro-text {
         font-size: 50px;
@@ -789,7 +802,23 @@ body {
 .lienoffres  {
     float: right;
     text-decoration: none;
+    margin-bottom: 20px;
 }
+a.seloffer {
+    color: grey;
+    padding: 12px 20px 12px 20px;
+    border: 2px solid grey;
+    text-transform: uppercase;   
+    margin-bottom: 20px;
+}
+
+a.seloffer:hover {
+    color: white;
+    border-color: transparent;
+    background-color: blue;
+
+}
+
 .social_links{
     background: #0c1a1e;
 }
