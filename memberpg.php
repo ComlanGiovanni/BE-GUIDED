@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
 
-       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.5, maximum-scale=2.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.5, maximum-scale=2.0">
         <title>Document</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="http://cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
@@ -53,23 +53,20 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="form-group col-sm-6 details">
                     <h4 class="titre"><i class="fa fa-question-circle" aria-hidden="true"></i> Détails</h4>
                     <div class="form-group col-md-12">
                         <div class="form-group col-sm-6">
-                            <input type="text" class="form-control"  placeholder="Expérience">
+                            <input type="text" class="form-control" name=""  placeholder="Expérience">
                         </div>
                         <div class="form-group col-sm-6">
-                            <input type="text" class="form-control" placeholder="Langue(s) parlée(s)">
+                            <input type="text" name="langue" class="form-control" placeholder="Langue(s) parlée(s)">
                         </div>
                     </div>
                     <div class="form-group col-md-12">
                         <div class="form-group col-sm-6">
-                            <input type="text" class="form-control" placeholder="Centres d'intérêts">
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <input type="text" class="form-control"  placeholder="Age">
+                            <input type="text" name="inter" class="form-control" placeholder="Centres d'intérêts">
                         </div>
                     </div>
                 </div>
