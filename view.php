@@ -48,7 +48,7 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-            <?php echo '<img src="users/user_' . $_SESSION['id_user'] . '/' . $info[0]['img_offer'] . '" alt="no img">'; ?>
+            <?php echo '<img src="guides/guide_' . $info[0]['id_guide'] . '/' . $info[0]['img_offer'] . '" alt="no img">'; ?>
         </div>
         <div class="col-md-4 col-md-offset-8">
             <h5>Prix :</h5>
