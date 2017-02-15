@@ -40,20 +40,31 @@ class SQL_Offer
 
     public function list_comment()
     {
-        $q = $this->query('SELECT * FROM offers, comment WHERE comment.id_offer = offers.id_offer 
-            AND id_offer = :id',[':id'=> $_GET['id']])->fetchAll();
-        foreach ($q as $com)
-        {
-            echo '<p>Ecrit le ' . $com['date_comment'] . '</p><br><p>' . $com['msg_comment'] .'</p>';
+        $q = $this->query('SELECT * FROM offers, comment, users WHERE comment.id_offer = offers.id_offer
+AND comment.id_user = users.id_user AND offers.id_offer = :id', [':id' => $_GET['id']])->fetchAll();
+        if (count($q) > 0) {
+            foreach ($q as $com) {
+                echo '<p>Ecrit le ' . $com['date_comment'] . ' par ' . $com['firstname'] . ' ' . $com['lastname'];
+                if ($com['date_modif_comment'] != NULL) {
+                    echo ' modifié le ' . $com['date_modif_comment'] . '</p>';
+                }
+                else {
+                    echo '</p>';
+                }
+            }
+            echo '<br><p>' . $com['msg_comment'] . '</p>';
+        } else {
+            echo 'Aucun commentaire';
         }
     }
 
-    public function list_offer()
+    public
+    function list_offer()
     {
         $i = $this->query('SELECT * FROM users,guide,offers WHERE guide.id_user = users.id_user AND offers.id_guide = guide.id_guide ORDER BY offers.date_publication DESC')->fetchAll();
         foreach ($i as $inf) {
             echo '<tr>
-                <td><img src="guides/guide_' . $inf['id_guide']. '/' . $inf['img_offer'] . '" height="200px" width="200px" alt=""></td>
+                <td><img src="guides/guide_' . $inf['id_guide'] . '/' . $inf['img_offer'] . '" height="200px" width="200px" alt=""></td>
                 <td>' . $inf['city_offer'] . '</td>
                 <td>' . $inf['lastname'] . ' ' . $inf['firstname'] . '</td>
                 <td><h4>' . $inf['name_offer'] . '</h4><br><p>' . $inf['description'] . '</p></td>
@@ -64,12 +75,13 @@ class SQL_Offer
     }
 
 
-    public function view_private()
+    public
+    function view_private()
     {
         $v = $this->query('SELECT * FROM offers WHERE `id_guide` = :id', [':id' => $_SESSION['id_guide']])->fetchAll();
         foreach ($v as $inf) {
             echo '<tr>
-                <td><img src="guides/guide_' . $inf['id_guide']. '/' . $inf['img_offer'] . '" height="200px" width="200px" alt=""></td>
+                <td><img src="guides/guide_' . $inf['id_guide'] . '/' . $inf['img_offer'] . '" height="200px" width="200px" alt=""></td>
                 <td>' . $inf['city_offer'] . '</td>
                 <td><h4>' . $inf['name_offer'] . '</h4><br><p>' . $inf['description'] . '</p></td>
                 <td>' . $inf['price_offer'] . ' €</td>
@@ -79,7 +91,8 @@ class SQL_Offer
         }
     }
 
-    public function create_offer()
+    public
+    function create_offer()
     {
         if (!isset($_FILES)) {
             $finfo = finfo_open(FILEINFO_MIME_TYPE); // Vérifie le type MIME du fichier
@@ -100,20 +113,20 @@ class SQL_Offer
                 }
             }
             $img = $_FILES['img']['name'];
-        }
-        else {
+        } else {
             $img = NULL;
         }
         if (!empty($_POST)) {
             $this->query('INSERT INTO offers(name_offer,city_offer,postal_code_offer,place_offer,price_offer,id_guide,description,date_publication,date_modification,img_offer) 
               VALUES (:name, :city,:cd, :place, :price, :id_g, :desc, NOW(), NOW(), :img)',
-                [':name' => $_POST['title'], ':city' => $_POST['city'], ':cd' => $_POST['dsp'], ':place' => $_POST['adr'],':price' => $_POST['price'],
+                [':name' => $_POST['title'], ':city' => $_POST['city'], ':cd' => $_POST['dsp'], ':place' => $_POST['adr'], ':price' => $_POST['price'],
                     ':id_g' => $_SESSION['id_guide'], ':desc' => $_POST['desc'], ':img' => $img]);
             header('Location: my_offer.php');
         }
     }
 
-    public function modif_offer()
+    public
+    function modif_offer()
     {
         if (!isset($_SESSION['guide'])) {
             header('Location: memberpg.php');
@@ -123,7 +136,7 @@ class SQL_Offer
             if (!empty($_POST)) {
                 $this->query('UPDATE offers SET name_offer= :name, city_offer= :city, `postal_code_offer`= :cd, place_offer = :place, price_offer = :price,
                   description = :desc WHERE `id_offer` = :id',
-                    [':name' => $_POST['title'], ':city' => $_POST['city'], ':cd' => $_POST['dsp'], ':place' => $_POST['adr'],':price' => $_POST['price'],
+                    [':name' => $_POST['title'], ':city' => $_POST['city'], ':cd' => $_POST['dsp'], ':place' => $_POST['adr'], ':price' => $_POST['price'],
                         ':desc' => $_POST['desc'], ':id' => $_GET['id']]);
                 header('Location: my_offer.php');
             }
@@ -131,7 +144,8 @@ class SQL_Offer
         return $v;
     }
 
-    public function upload()
+    public
+    function upload()
     {
         if (!$_SESSION['connected']) {
             header('Location: connexion.php');

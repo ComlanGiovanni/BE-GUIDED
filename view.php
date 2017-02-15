@@ -67,6 +67,11 @@
             <p></p>
         </div>
     </div>
+    <div class="row">
+        <h4>Commentaires</h4>
+        <br>
+        <?php $of->list_comment(); ?>
+    </div>
 </div>
 <?php include 'php/footer.php'; ?>
 
