@@ -23,7 +23,7 @@ $of = new SQL_Offer('root', '', 'be-guided');
             <ul class="nav navbar-nav">
                 <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                 <?php if (!isset($_SESSION['connected'])) {
-                    echo '
+    echo '
                 <li class="hidden">
                     <a href="index.php"></a>
                 </li>
@@ -36,35 +36,35 @@ $of = new SQL_Offer('root', '', 'be-guided');
                 <li>
                     <a class="page-scroll" href="geoloc.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Localisation</a>
                 </li>';
-                } else {
-                    echo '
+} else {
+    echo '
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
                 <li class="dropdown"> 
-                    <a href="#" class="dropdown-toggle" id="drop2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Mon profil <span class="caret"></span> </a> 
+                    <a href="#" class="dropdown-toggle" id="drop2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Mon Compte <span class="caret"></span> </a> 
                     <ul class="dropdown-menu" aria-labelledby="drop2"> 
-                        <li><a href="account.php">Mon compte</a></li>';
-                        if (!isset($_SESSION['guide'])) {
+                        <li><a href="account.php"><i class="fa fa-info-circle" aria-hidden="true"></i> Mon Profil</a></li>';
+    if (!isset($_SESSION['guide'])) {
 
-                        echo '<li><a href="memberpg.php">Devenir Guide</a></li>';
-                    }
-                    else {
-                        echo '<li><a href="create_offer.php">Creer une offre</a></li>
+        echo '<li><a href="memberpg.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Devenir Guide</a></li>';
+    }
+    else {
+        echo '<li><a href="create_offer.php">Creer une offre</a></li>
                                <li><a href="my_offer.php">Gerer mes offres</a></li>';
-                    }
+    }
 
-                        echo '
-                         <li><a href="offres.php">Voir les offres</a></li>
+    echo '
+                         <li><a href="offres.php"><i class="fa fa-eye" aria-hidden="true"></i> Voir les offres</a></li>
                         <li role="separator" class="divider"></li> 
-                        <li><a href="php/deconnexion.php">Déconnexion</a></li> 
+                        <li><a href="php/deconnexion.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</a></li> 
                     </ul>
                 </li>
                 <li>
                     <a class="page-scroll" href="geoloc.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Localisation</a>
                 </li>';
 
-                }
+}
                 ?>
 
             </ul>
