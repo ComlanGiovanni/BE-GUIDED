@@ -68,7 +68,7 @@ AND comment.id_user = users.id_user AND offers.id_offer = :id', [':id' => $_GET[
                 <td>' . $inf['city_offer'] . '</td>
                 <td>' . $inf['lastname'] . ' ' . $inf['firstname'] . '</td>
                 <td><h4>' . $inf['name_offer'] . '</h4><br><p>' . $inf['description'] . '</p></td>
-                <td> <button type="button" class="btn btn-primary">' . $inf['price_offer'] . '</button> €</td>
+                <td> ' . $inf['price_offer'] . ' €</td>
                 <td><button type="button" class="btn btn-primary"><a href="view.php?id=' . $inf['id_offer'] . '">Voir Plus</a></button></td>
                 </tr>';
         }
