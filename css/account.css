@@ -224,6 +224,12 @@ hr {
         margin-left: 15px;
     }
 }
+@media (min-width: 990px){
+
+    .details {
+        border-left: 2px solid white;
+    }
+}
 input{
     margin-bottom: 10px;
 }
@@ -248,13 +254,12 @@ label {
     padding-bottom: 25px;
 }
 
-@media (min-width: 768px){ 
+.hprofil {
+    margin-top: 15px;
+}
+@media (min-width: 990px){
 
     .personal-info {
         border-left: 2px solid white;
     }
-
-}
-.hprofil {
-    margin-top: 15px;
 }
