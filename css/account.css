@@ -6,7 +6,6 @@ body {
     background-size: cover;
     color: black;
 }
-h1,
 h2,
 h3,
 h4,
@@ -253,4 +252,7 @@ label {
         border-left: 2px solid white;
     }
 
+}
+.hprofil {
+    margin-top: 15px;
 }

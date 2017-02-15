@@ -50,10 +50,10 @@ class SQL_User
             } else {
                 if ($_POST['pass'] == $_POST['pass2']) {
                     $this->query('INSERT INTO users(lastname, firstname, password, email) VALUES (:lname, :fname, :password, :email)',
-                        [':lname' => htmlspecialchars($_POST['lastname']), ':fname' => htmlspecialchars($_POST['firstname']), ':password' => crypt(htmlspecialchars($_POST['pass']), '$5$rounds=2000$salt$'), ':email' => htmlspecialchars($_POST['email'])]);
+                                 [':lname' => htmlspecialchars($_POST['lastname']), ':fname' => htmlspecialchars($_POST['firstname']), ':password' => crypt(htmlspecialchars($_POST['pass']), '$5$rounds=2000$salt$'), ':email' => htmlspecialchars($_POST['email'])]);
                     header('Location: connexion.php');
                 } else {
-                    echo '<div class="alert">Les mots de passe ne correspondent pas ! Veuillez réessayer.</div>';
+                    echo '<div class="alert alert-danger">Les mots de passe ne correspondent pas ! Veuillez réessayer.</div>';
                 }
             }
         }
@@ -64,7 +64,7 @@ class SQL_User
         if (!empty($_POST)) {
 
             $a = $this->query('SELECT id_user, lastname FROM `users` WHERE email = :email AND `password` = :pass',
-                [':email' => htmlspecialchars($_POST['email']), ':pass' => crypt(htmlspecialchars($_POST['pass']), '$5$rounds=2000$salt$')])->fetchAll();
+                              [':email' => htmlspecialchars($_POST['email']), ':pass' => crypt(htmlspecialchars($_POST['pass']), '$5$rounds=2000$salt$')])->fetchAll();
             if (count($a) > 0) {
                 $b = $this->query('SELECT * FROM users INNER JOIN guide ON users.id_user = guide.id_user WHERE users.id_user = :id',[':id' => $a[0]['id_user']])->fetchAll();
                 $_SESSION['connected'] = true;
@@ -75,7 +75,7 @@ class SQL_User
                 }
                 header('Location: index.php');
             } else {
-                echo '<span id="pass" class="help-block">Vos identifiants sont incorrects !</span>';
+                echo '<div class="alert alert-danger">Vos identifiants sont incorrects ! Veuillez réessayer.</div>';
             }
         }
     }
@@ -108,9 +108,9 @@ class SQL_User
                 $_POST['inter5'];
             $this->query('INSERT INTO guide(id_user, city, postal_code, address, languages, hobbies, num_mobile)
               VALUES (:id, :city, :ptc, :add, :lang, :hobbies, :mobil)',
-                [':id' => htmlspecialchars($_SESSION['id_user']), ':city' => $_POST['city'],
-                    ':ptc' => htmlspecialchars($_POST['cdp']), ':add' => htmlspecialchars($_POST['address']),
-                    ':lang' => htmlspecialchars($lang), ':hobbies' => htmlspecialchars($hobbies), ':mobil' => htmlspecialchars($_POST['numTel'])]);
+                         [':id' => htmlspecialchars($_SESSION['id_user']), ':city' => $_POST['city'],
+                          ':ptc' => htmlspecialchars($_POST['cdp']), ':add' => htmlspecialchars($_POST['address']),
+                          ':lang' => htmlspecialchars($lang), ':hobbies' => htmlspecialchars($hobbies), ':mobil' => htmlspecialchars($_POST['numTel'])]);
             $_SESSION['guide'] = true;
         }
     }
@@ -128,10 +128,10 @@ class SQL_User
             header('Location: connexion.php');
         } else {
             $v = $this->query('SELECT * FROM `users` WHERE `id_user` = :id',
-                [':id' => $_SESSION['id_user']])->fetchAll();
+                              [':id' => $_SESSION['id_user']])->fetchAll();
             if (!empty($_POST)) {
                 $this->query('UPDATE `users` SET `lastname`= :lname, firstname= :fname, `password`= :password,`email`= :email WHERE `id_user` = :id',
-                    [':lname' => htmlspecialchars($_POST['name']), ':fname' => htmlspecialchars($_POST['firstname']), ':password' => crypt(htmlspecialchars($_POST['password']), '$5$rounds=2000$salt$'), ':email' => htmlspecialchars($_POST['email']), ':id' => $_SESSION['id_user']]);
+                             [':lname' => htmlspecialchars($_POST['name']), ':fname' => htmlspecialchars($_POST['firstname']), ':password' => crypt(htmlspecialchars($_POST['password']), '$5$rounds=2000$salt$'), ':email' => htmlspecialchars($_POST['email']), ':id' => $_SESSION['id_user']]);
                 header('Location: account.php');
             }
         }
