@@ -7,7 +7,7 @@ body {
 
 a {
     text-decoration: none;
-    color: #5A5E6B;
+    color: #ffffff;
     -webkit-transition: .5s ease;
     transition: .5s ease;
 }
@@ -22,7 +22,7 @@ a:hover {
     margin-top: 150px;
     border-radius: 4px;
     box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
-    background: white;
+    background: rgba(0,0,0,.5);
 
 }
 
@@ -65,7 +65,7 @@ a:hover {
 
 h1 {
     text-align: center;
-    color: #2A3843;
+    color: #ffffff;
     font-weight: 500;
     margin: 0 0 40px;
     font-size: 20px;
@@ -76,7 +76,7 @@ label {
     -webkit-transform: translateY(6px);
     transform: translateY(6px);
     left: 13px;
-    color: #2A3843;
+    color: #ffffff;
     -webkit-transition: all 0.25s ease;
     transition: all 0.25s ease;
     -webkit-backface-visibility: hidden;
@@ -99,7 +99,7 @@ label.active .req {
 }
 
 label.highlight {
-    color: #2A3843;
+    color: #ffffff;
 }
 
 input, textarea {
@@ -111,7 +111,7 @@ input, textarea {
     background: none;
     background-image: none;
     border: 1px solid #a0b3b0;
-    color: #2A3843;
+    color: #ffffff;
     border-radius: 0;
     -webkit-transition: border-color .25s ease, box-shadow .25s ease;
     transition: border-color .25s ease, box-shadow .25s ease;
@@ -148,7 +148,7 @@ textarea {
 .button {
     border: 0;
     outline: none;
-    border-radius: 0;
+    border-radius: 4px;
     padding: 8px 0;
     font-family: 'Poppins', sans-serif;
     font-size: 17px;
