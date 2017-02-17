@@ -1,143 +1,13 @@
-#imaginary_container{
-    margin-top:30%; /* Don't copy this */
-    margin-bottom: 30%;
-}
-.stylish-input-group .input-group-addon{
-    background: white !important; 
-}
-.stylish-input-group .form-control{
-    border-right:0; 
-    box-shadow:0 0 0; 
-    border-color:#ccc;
-}
-.stylish-input-group button {
-    border:0;
-    background:transparent;
-}
-
-.container-fluid {
-    background: url('../img/bck.jpg') center center no-repeat ;
-    width:100%;
-    height: 100%;
-}
-
-.data-item .data-img {
-    padding: 0;
-    max-height: 155px;
-}
-
-[class*="col-"] {
-    float: left;
-    padding: 15px;
-    position: relative;
-    z-index: 1;
-}
-.col-30 {
-    width: 30%;
-}
-a:hover {
-    color: #23527c;
-    text-decoration: none;
-}
-
-
-body {
-    font-family: 'Poppins', sans-serif;
-}
-.navbar-custom {
-    margin-bottom: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    font-family: 'Poppins', sans-serif;
-    background-color: black;
-}
-.navbar-custom .navbar-toggle {
-    color: white;
-    font-size: 15px;
-}
-.navbar-custom .navbar-toggle:focus,
-.navbar-custom .navbar-toggle:active {
-    outline: none;
-}
-
-.navbar-custom .navbar-brand:focus, {
-    outline: none;
-}
-.navbar-custom a {
-    color: white;
-}
-.navbar-custom .nav li a {
-    -webkit-transition: background 0.3s ease-in-out;
-    -moz-transition: background 0.3s ease-in-out;
-    transition: background 0.3s ease-in-out;
-
-}
-.navbar-custom .nav li a:hover {
-    color: rgba(255, 255, 255, 0.8);
-    outline: none;
-    background-color: transparent;
-}
-.navbar-custom .nav li a:focus,
-.navbar-custom .nav li a:active {
-    outline: none;
-    background-color: transparent;
-}
-.navbar-custom .nav li.active {
-    outline: none;
-}
-.navbar-custom .nav li.active a {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-.navbar-custom .nav li.active a:hover {
-    color: white;
-}
-@media (min-width: 768px) {
-    .navbar-custom {
-        padding: 20px 0;
-        border-bottom: none;
-        letter-spacing: 1px;
-        background: transparent;
-        -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-        -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-        transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-    }
-    .navbar-custom.top-nav-collapse {
-        padding: 0;
-        background:rgba(0,0,0,0.8);
-    }
-}
-
-@media (min-width: 768px) {
-    .navbar-custom {
-        padding: 20px 0;
-        border-bottom: none;
-        letter-spacing: 1px;
-        background:rgba(0,0,0,0.8);
-        padding: 0;
-
-    }
-    .navbar-custom.top-nav-collapse {
-        padding: 0;
-        background:rgba(0,0,0,0.8);
-    }
-}
-.navbar-custom .nav li a:hover {
-    color: #a2a2a5;
-    outline: none;
-    background-color: transparent;
-}
-.nav .open>a {
-    background-color: transparent;
-}
-
 body {
     width: 100%;
     height: 100%;
     font-family: 'Poppins', sans-serif;
-    background-size: cover;
-    color: black;
+    background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), rgba(0,0,0,0.5)  url('../img/bckg06.jpg') center center no-repeat;
+    background-size:cover;
+    color: white;
 }
 html {
-    height: 100%;
+    width: 100%;
 }
 h2,
 h3,
@@ -187,7 +57,7 @@ a:focus {
     outline: none;
 }
 .navbar-custom .navbar-brand {
-
+    font-weight: 700;
 }
 .navbar-custom .navbar-brand:focus, {
     outline: none;
@@ -269,12 +139,12 @@ a:focus {
 }
 div .copyright {
     text-align: center;
-    margin-top: 0px;
     margin-bottom: 0px;
+    margin-top: 0px;
     text-align: left;
-    background-color: #000000;
-    color:#797979;
     font-size: 12px;
+    background-color: #000000;
+    color: #797979;
 }
 .tfooter{
     font-weight: bold;
@@ -336,13 +206,6 @@ ol, ul {
     margin-top: 50px;
     margin-bottom: 50px;
 }
-
-.table {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 0px;
-}
-
 h1.title {
     font-size: 30px;
     font-weight: 400;
@@ -408,12 +271,19 @@ label {
 .btn-default{
     text-align: center;
 }
+.table {
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+.table-hover>tbody>tr:hover {
+    background-color: transparent;
+}
 .social {
     text-align: center;
     font-size: 24px;
     background-color: #2C2C2C;
     padding-bottom: 25px;
-    color: #ffffff;
+
 }
 .social_txt {
     padding-top: 10px;
@@ -443,4 +313,8 @@ label {
 .social_item4:hover
 {
     background-color:   #C60800;
+}
+.container-fluid {
+    margin-bottom: 150px;
+    margin-top: 150px;
 }

@@ -6,6 +6,11 @@ body {
     background-size: cover;
     color: black;
 }
+html {
+    width: 100%;
+
+
+}
 h2,
 h3,
 h4,
@@ -138,7 +143,12 @@ a:focus {
 }
 div .copyright {
     text-align: center;
-    padding-bottom: 1em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: left;
+    color: #797979;
+    background-color:#000000;
+    font-size: 12px;
 }
 .tfooter{
     font-weight: bold;
@@ -172,7 +182,7 @@ ol, ul {
 #footerid{
     margin-top: 20px;
     margin-bottom: 20px;
-    border-bottom: 1px solid rgb(40, 39, 39);
+    display: flex;
 }
 .form {
     position: relative;
@@ -247,8 +257,7 @@ label {
     margin-bottom: 150px;
     background-color: rgba(0,0,0,.5);
     border-radius: 3px;
-
-
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
 .row {
     padding-bottom: 25px;
@@ -262,4 +271,41 @@ label {
     .personal-info {
         border-left: 2px solid white;
     }
+}
+.social {
+    text-align: center;
+    font-size: 24px;
+    background-color: #2C2C2C;
+    padding-bottom: 25px;
+    color: #ffffff;
+
+}
+.social_txt {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+.social a {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+}
+
+.social_item1:hover {
+    background-color: #3b5998;
+}
+
+.social_item2:hover
+{
+    background-color:  #4099FF;
+}
+.social_item3:hover
+{
+    background-color:   #0e76a8;
+}
+
+
+.social_item4:hover
+{
+    background-color:   #C60800;
 }

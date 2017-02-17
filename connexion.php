@@ -81,9 +81,9 @@
     <script src="js/project.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="/public/js/bootstrap/3.3.5/bootstrap.min.js"></script>
-    <script src="/public/js/min/sugarsync-helpers.js"></script>
-    <link rel="gettext" type="application/json" href="/public/js/LC_MESSAGES/sstranslate-fr.json">
-    <script language="javascript" src="/public/js/min/gettext.js"></script>
+
+   
+  >
 
     </body>
 </html>

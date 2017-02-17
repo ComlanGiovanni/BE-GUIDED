@@ -6,7 +6,11 @@ body {
     background-size: cover;
     color: black;
 }
-
+html {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+}
 h1,
 h2,
 h3,
@@ -228,4 +232,40 @@ hr {
 }
 input{
     margin-bottom: 10px;
+}
+.social {
+    text-align: center;
+    font-size: 24px;
+    background-color: #2C2C2C;
+    padding-bottom: 25px;
+
+}
+.social_txt {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+.social a {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+}
+
+.social_item1:hover {
+    background-color: #3b5998;
+}
+
+.social_item2:hover
+{
+    background-color:  #4099FF;
+}
+.social_item3:hover
+{
+    background-color:   #0e76a8;
+}
+
+
+.social_item4:hover
+{
+    background-color:   #C60800;
 }

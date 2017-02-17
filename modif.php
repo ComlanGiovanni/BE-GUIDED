@@ -42,7 +42,7 @@
     <form method="post" action="#" enctype="multipart/form-data">
         <div class="form-group col-md-offset-1 col-md-10">
             <label for="title">Nom</label>
-            <input type="text" class="form-control" id="title" name="title" value="<?= $v[0]['name_offer']; ?>" ">
+            <input type="text" class="form-control" id="title" name="title" value="<?= $v[0]['name_offer']; ?>">
         </div>
         <div class="form-group col-md-offset-1 col-md-10">
             <label for="desc">Description</label>
@@ -74,73 +74,9 @@
 </div>
 
 <?php include 'php/footer.php'; ?>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="/public/js/bootstrap/3.3.5/bootstrap.min.js"></script>
-<script src="/public/js/min/sugarsync-helpers.js"></script>
-<link rel="gettext" type="application/json" href="/public/js/LC_MESSAGES/sstranslate-fr.json">
-<script language="javascript" src="/public/js/min/gettext.js"></script>
-
-<script src="/public/js/min/sugarsync-pricing.js?1479818852"></script>
-<script src="/public/js/min/jquery.scrollTo.min.js"></script>
-<script src="/public/js/min/new-home.js?1479818852"></script>
-<script src="/public/js/min/urlEncode.js"></script>
-<script src="/public/js/min/sugarsync-signup.js?1479818852"></script>
-
-<script type="text/javascript">
-    var gt = new Gettext({"domain": "sstranslate"});
-    function _(msgid) {
-        return gt.gettext(msgid);
-    }
-
-
-    $("#language").change(function () {
-        var langs = ["en", "jp", "fr", "de", "es"];
-        var languageSelected = this.value;
-        var url = window.location;
-        var pieces = url.toString().split("/");
-        if (langs.indexOf(pieces[3]) != -1) {
-            pieces[3] = languageSelected;
-        }
-        else {
-            pieces.unshift("dummy");
-            pieces[0] = pieces[1];
-            pieces[1] = pieces[2];
-            pieces[2] = pieces[3];
-            pieces[3] = languageSelected;
-        }
-        window.location.href = pieces.join('/');
-    });
-
-    $('body :not(script) :not(iframe)').contents().filter(function () {
-        return this.nodeType === 3;
-    }).replaceWith(function () {
-        return this.nodeValue.replace(/[<sup>™</sup><sup>®</sup>]/g, '<sup>$&amp;</sup>');
-    });
-
-
-    $('#try-sugarsync-free').click(function () {
-        if ($('#signUp').length) {
-            $(window).scrollTo($('#signUp'), 800, {offset: -100});
-        }
-        else {
-            window.location.href = $(this).data("href");
-        }
-    });
-
-    function setActiveStyleSheet(title) {
-        var i, a, main;
-        for (i = 0; (a = document.getElementsByTagName("link")[i]); i++) {
-            if (a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) {
-                a.disabled = true;
-                if (a.getAttribute("title") == title) a.disabled = false;
-            }
-        }
-    }
-</script>
-</div>
-<script src="js/bootstrap.min.js"></script>
 <!-- Fin footer -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 <a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-arrow-up"></i></a>
 <!-- jQuery -->
 <script src="vendor/jquery/jquery.js"></script>

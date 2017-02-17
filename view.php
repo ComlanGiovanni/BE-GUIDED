@@ -20,7 +20,6 @@
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto|Poppins" rel="stylesheet">
     <!-- Theme CSS -->
-    <link href="css/project.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,6 +32,7 @@
     <![endif]-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+          <link rel="stylesheet" href="css/view.css">
 
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -40,8 +40,6 @@
 <a href="javascript:document.location.href='#myModal'"></a>
 <?php include 'php/nav.php'; ?>
 <?php $info = $of->view_offer(); ?>
-<div style="height: 100px; background: #000;">
-</div>
 <div class="container-fluid">
     <div class="row">
         <h1> <?php echo $info[0]['name_offer']; ?></h1>
@@ -76,70 +74,7 @@
 <?php include 'php/footer.php'; ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="/public/js/bootstrap/3.3.5/bootstrap.min.js"></script>
-<script src="/public/js/min/sugarsync-helpers.js"></script>
-<link rel="gettext" type="application/json" href="/public/js/LC_MESSAGES/sstranslate-fr.json">
-<script language="javascript" src="/public/js/min/gettext.js"></script>
 
-<script src="/public/js/min/sugarsync-pricing.js?1479818852"></script>
-<script src="/public/js/min/jquery.scrollTo.min.js"></script>
-<script src="/public/js/min/new-home.js?1479818852"></script>
-<script src="/public/js/min/urlEncode.js"></script>
-<script src="/public/js/min/sugarsync-signup.js?1479818852"></script>
-
-<script type="text/javascript">
-    var gt = new Gettext({"domain": "sstranslate"});
-    function _(msgid) {
-        return gt.gettext(msgid);
-    }
-
-
-    $("#language").change(function () {
-        var langs = ["en", "jp", "fr", "de", "es"];
-        var languageSelected = this.value;
-        var url = window.location;
-        var pieces = url.toString().split("/");
-        if (langs.indexOf(pieces[3]) != -1) {
-            pieces[3] = languageSelected;
-        }
-        else {
-            pieces.unshift("dummy");
-            pieces[0] = pieces[1];
-            pieces[1] = pieces[2];
-            pieces[2] = pieces[3];
-            pieces[3] = languageSelected;
-        }
-        window.location.href = pieces.join('/');
-    });
-
-    $('body :not(script) :not(iframe)').contents().filter(function () {
-        return this.nodeType === 3;
-    }).replaceWith(function () {
-        return this.nodeValue.replace(/[<sup>™</sup><sup>®</sup>]/g, '<sup>$&amp;</sup>');
-    });
-
-
-    $('#try-sugarsync-free').click(function () {
-        if ($('#signUp').length) {
-            $(window).scrollTo($('#signUp'), 800, {offset: -100});
-        }
-        else {
-            window.location.href = $(this).data("href");
-        }
-    });
-
-    function setActiveStyleSheet(title) {
-        var i, a, main;
-        for (i = 0; (a = document.getElementsByTagName("link")[i]); i++) {
-            if (a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) {
-                a.disabled = true;
-                if (a.getAttribute("title") == title) a.disabled = false;
-            }
-        }
-    }
-</script>
-
-<script src="js/bootstrap.min.js"></script>
 <!-- Fin footer -->
 <a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-arrow-up"></i></a>
 <!-- jQuery -->

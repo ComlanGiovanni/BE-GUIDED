@@ -53,16 +53,6 @@
         </div>
         <?php include 'php/footer.php'; ?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="/public/js/bootstrap/3.3.5/bootstrap.min.js"></script>
-        <script src="/public/js/min/sugarsync-helpers.js"></script>
-        <link rel="gettext" type="application/json" href="/public/js/LC_MESSAGES/sstranslate-fr.json">
-        <script language="javascript" src="/public/js/min/gettext.js"></script>
-
-        <script src="/public/js/min/sugarsync-pricing.js?1479818852"></script>
-        <script src="/public/js/min/jquery.scrollTo.min.js"></script>
-        <script src="/public/js/min/new-home.js?1479818852"></script>
-        <script src="/public/js/min/urlEncode.js"></script>
-        <script src="/public/js/min/sugarsync-signup.js?1479818852"></script>
         <script src="js/bootstrap.min.js"></script>
         <!-- Fin footer -->
         <a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-arrow-up"></i></a>
