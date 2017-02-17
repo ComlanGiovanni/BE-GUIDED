@@ -7,7 +7,7 @@ body {
 
 a {
     text-decoration: none;
-    color: #5A5E6B;
+    color: #ffffff;
     -webkit-transition: .5s ease;
     transition: .5s ease;
 }
@@ -22,7 +22,7 @@ a:hover {
     margin-top: 80px;
     border-radius: 4px;
     box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
-    background: white;
+    background: rgba(0,0,0,.5);
 
 }
 
@@ -41,7 +41,7 @@ a:hover {
     text-decoration: none;
     padding: 8px;
     background: rgba(160, 179, 176, 0.25);
-    color: #5A5E6B;
+    color: #ffffff;
     font-size: 17px;
     float: left;
     width: 50%;
@@ -65,7 +65,7 @@ a:hover {
 
 h1 {
     text-align: center;
-    color: #2A3843;
+    color: #ffffff;
     font-weight: 500;
     margin: 0 0 40px;
     font-size: 20px;
@@ -76,7 +76,7 @@ label {
     -webkit-transform: translateY(6px);
     transform: translateY(6px);
     left: 13px;
-    color: #2A3843;
+    color: #ffffff;
     -webkit-transition: all 0.25s ease;
     transition: all 0.25s ease;
     -webkit-backface-visibility: hidden;
@@ -99,7 +99,7 @@ label.active .req {
 }
 
 label.highlight {
-    color: #2A3843;
+    color: #ffffff;
 }
 
 input, textarea {
@@ -111,7 +111,7 @@ input, textarea {
     background: none;
     background-image: none;
     border: 1px solid #a0b3b0;
-    color: #2A3843;
+    color: #ffffff;
     border-radius: 0;
     -webkit-transition: border-color .25s ease, box-shadow .25s ease;
     transition: border-color .25s ease, box-shadow .25s ease;
@@ -193,7 +193,7 @@ textarea {
     background-color: black;
 }
 .navbar-custom .navbar-toggle {
-    color: white;
+    color: #ffffff;
     font-size: 15px;
 }
 .navbar-custom .navbar-toggle:focus,
@@ -204,7 +204,7 @@ textarea {
     outline: none;
 }
 .navbar-custom a {
-    color: white;
+    color: #ffffff;
 }
 .navbar-custom .nav li a {
     -webkit-transition: background 0.3s ease-in-out;
@@ -229,7 +229,7 @@ textarea {
     background-color: rgba(255, 255, 255, 0.3);
 }
 .navbar-custom .nav li.active a:hover {
-    color: white;
+    color: #ffffff;
 }
 @media (min-width: 768px) {
     .navbar-custom {
