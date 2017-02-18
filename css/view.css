@@ -116,11 +116,12 @@ a:focus {
     right: 50px;
     display: none;
     color: white;
-    background-color: #3a3f51;
-    border: 1px solid #3a3f51;
+    background-color: #03224C;
+    border: 1px solid #03224C;
     font-size: 20px;
     text-align: center;
     line-height: 37px;
+    border-radius: 100%;
 }
 
 .scrollup:hover {

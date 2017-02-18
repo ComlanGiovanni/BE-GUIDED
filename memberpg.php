@@ -77,6 +77,7 @@
         </div>
 
         <?php include 'php/footer.php'; ?>
+        <a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
         <script src="js/inscon.js"></script>

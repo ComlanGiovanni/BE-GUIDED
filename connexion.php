@@ -57,7 +57,7 @@
                         <button type="submit" class="button button-block"/>Connexion</button>
 
                     </form> <br>
-                <a href="index.php" style="float:right;"><i class="fa fa-home" aria-hidden="true"></i> Acceuil</a>
+                <a href="index.php" style="float:right;"><i class="fa fa-home" aria-hidden="true"></i> Accueil</a>
 
             </div>
 

@@ -121,11 +121,12 @@ a:focus {
     right: 50px;
     display: none;
     color: white;
-    background-color: #3a3f51;
-    border: 1px solid #3a3f51;
+    background-color: #03224C;
+    border: 1px solid #03224C;
     font-size: 20px;
     text-align: center;
     line-height: 37px;
+    border-radius: 100%;
 }
 
 .scrollup:hover {
@@ -144,7 +145,11 @@ a:focus {
 }
 div .copyright {
     text-align: center;
-    padding-bottom: 1em;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: left;
+    font-size: 12px;
+    color: #797979;
 }
 .tfooter{
     font-weight: bold;
@@ -178,7 +183,6 @@ ol, ul {
 #footerid{
     margin-top: 20px;
     margin-bottom: 20px;
-    border-bottom: 1px solid rgb(40, 39, 39);
 }
 .form {
     position: relative;
@@ -238,6 +242,7 @@ input{
     font-size: 24px;
     background-color: #2C2C2C;
     padding-bottom: 25px;
+    color: #ffffff;
 
 }
 .social_txt {

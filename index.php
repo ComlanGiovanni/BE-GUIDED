@@ -187,22 +187,12 @@
         </div>
         <!-- Fin -->
         <?php include 'php/footer.php'; ?>
-
+        <!-- Fin footer -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-        </div>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Fin footer -->
-    <a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-arrow-up"></i></a>
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.js"></script>        
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Fin footer -->
-    <a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-arrow-up"></i></a>
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.js"></script>
-    </div>
-</div>
+        <!-- Fin footer -->
+        <a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-angle-up"></i></a>
+        <!-- jQuery -->
+        <script src="vendor/jquery/jquery.js"></script>        
 <!-- Bootstrap Core JavaScript -->
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 

@@ -86,7 +86,7 @@
 
                 </form>
                 <br>
-                <a href="index.php" style="float:right;"><i class="fa fa-home" aria-hidden="true"></i> Acceuil</a>
+                <a href="index.php" style="float:right;"><i class="fa fa-home" aria-hidden="true"></i> Accueil</a>
 
             </div>
         </div>

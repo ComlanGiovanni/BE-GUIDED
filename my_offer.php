@@ -63,7 +63,7 @@
 <!-- jQuery -->
 <script src="vendor/jquery/jquery.js"></script>        <script src="js/bootstrap.min.js"></script>
 <!-- Fin footer -->
-<a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-arrow-up"></i></a>
+<a href="#page-top" title="Haut de page" class="scrollup">  <a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-angle-up" aria-hidden="true"></i></a></a>
 <!-- jQuery -->
 <script src="vendor/jquery/jquery.js"></script>
 
