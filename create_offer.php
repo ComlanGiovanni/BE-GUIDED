@@ -35,7 +35,7 @@
         $of->create_offer();
         ?>
         <div class="container cont">
-            <h1 class="hoffer">Créez votre offre</h1>
+            <h1 class="hoffer"><i class="fa fa-plus" aria-hidden="true"></i> Créez votre offre</h1>
             <hr>
             <br>
             <form method="post" action="#" enctype="multipart/form-data">

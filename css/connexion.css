@@ -274,3 +274,9 @@ textarea {
     border-radius: 0px;
     text-align: center;
 }
+.navbar-nav>li>.dropdown-menu {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-radius: 0px;
+}

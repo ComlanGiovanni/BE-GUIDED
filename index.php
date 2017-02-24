@@ -83,10 +83,10 @@
                     </div>
                     <div class="hero">
                         <hgroup>
-                            <h1>We are creative</h1>        
-                            <h3>Get start your next awesome project</h3>
+                            <h1><i class="fa fa-globe" aria-hidden="true"></i> Découverte</h1>        
+                            <h3>Des centaines d'activités partout en France <br> et dans des lieux parfois insolites et surprenants ! </h3>
                         </hgroup>
-                        <button class="btn btn-hero btn-lg" role="button">More</button>
+                        <button class="btn btn-hero btn-lg" role="button">Plus de détails</button>
                     </div>
                 </div>
                 <div class="item slides">
@@ -95,10 +95,10 @@
                     </div>
                     <div class="hero">        
                         <hgroup>
-                            <h1>We are smart</h1>        
-                            <h3>Get start your next awesome project</h3>
+                            <h1><i class="fa fa-comments-o" aria-hidden="true"></i> Rencontres</h1>        
+                            <h3>Des personnes passionnantes et passionnées qui s'attacheront à vous faire voir la France autrement.</h3>
                         </hgroup>       
-                        <button class="btn btn-hero btn-lg" role="button">More</button>
+                        <button class="btn btn-hero btn-lg" role="button">Plus de détails</button>
                     </div>
                 </div>
                 <div class="item slides">
@@ -107,10 +107,10 @@
                     </div>
                     <div class="hero">        
                         <hgroup>
-                            <h1>We are amazing</h1>        
-                            <h3>Get start your next awesome project</h3>
+                            <h1><i class="fa fa-check" aria-hidden="true"></i> Qualité</h1>        
+                            <h3>Nous assurons la qualité de toutes les activités proposées.</h3>
                         </hgroup>
-                        <button class="btn btn-hero btn-lg" role="button">More</button>
+                        <button class="btn btn-hero btn-lg" role="button">Plus de détails</button>
                     </div>
                 </div>
             </div> 
@@ -130,7 +130,7 @@
                                     <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
                                     <div class="col-md-9">
                                         <h2 class="carousel">Offre 1</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta. <br> <a href="#" class="link_offer"><i class="fa fa-arrow-right" aria-hidden="true"></i></a> </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta. <br> <a href="view.php?id=1" class="link_offer">Détails <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </p>
                                     </div>
                                 </div>
                             </div>            
@@ -141,7 +141,7 @@
                                     <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
                                     <div class="col-md-9">
                                         <h2 class="carousel">Offre 2</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.  <br> <a href="#" class="link_offer"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.  <br> <a href="#" class="link_offer">Détails <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></p>
                                     </div>
                                 </div>
                             </div>            
@@ -152,7 +152,7 @@
                                     <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
                                     <div class="col-md-9">
                                         <h2 class="carousel">Offre 3</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.  <br> <a href="#" class="link_offer"><i class="fa fa-arrow-right" aria-hidden="true"></i></a> </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.  <br> <a href="#" class="link_offer">Détails <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </p>
                                     </div>
                                 </div>
                             </div>           
@@ -163,7 +163,7 @@
                                     <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
                                     <div class="col-md-9">
                                         <h2 class="carousel">Offre 4</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.  <br> <a href="#" class="link_offer" title="En Savoir Plus"><i class="fa fa-arrow-right" aria-hidden="true"></i></a> </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.  <br> <a href="#" class="link_offer">Détails <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </p>
                                     </div>
                                 </div>
                             </div>           

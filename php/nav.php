@@ -34,7 +34,7 @@ $of = new SQL_Offer('root', '', 'be-guided');
                     <a class="page-scroll" href="connexion.php"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Connexion</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="geoloc.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Localisation</a>
+                    <a class="page-scroll" href="geoloc.php"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Localisation</a>
                 </li>';
 } else {
     echo '
@@ -42,7 +42,7 @@ $of = new SQL_Offer('root', '', 'be-guided');
                     <a href="#page-top"></a>
                 </li>
                 <li class="dropdown"> 
-                    <a href="#" class="dropdown-toggle" id="drop2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Mon Compte <span class="caret"></span> </a> 
+                    <a href="#" class="dopdown-toggle" id="drop2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Mon Compte <span class="caret"></span> </a> 
                     <ul class="dropdown-menu" aria-labelledby="drop2"> 
                         <li><a href="account.php"><i class="fa fa-info-circle" aria-hidden="true"></i> Mon Profil</a></li>';
     if (!isset($_SESSION['guide'])) {
@@ -61,7 +61,7 @@ $of = new SQL_Offer('root', '', 'be-guided');
                     </ul>
                 </li>
                 <li>
-                    <a class="page-scroll" href="geoloc.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Localisation</a>
+                    <a class="page-scroll" href="geoloc.php"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Localisation</a>
                 </li>';
 
 }

@@ -33,7 +33,7 @@
         <?php include 'php/nav.php';
         $v = $req->view_profile();?>
         <div class="container cont">
-            <h1 class="hprofil">Mon Profil</h1>
+            <h1 class="hprofil"><i class="fa fa-info-circle" aria-hidden="true"></i> Mon Profil</h1>
             <hr>
             <br>
             <div class="row">
@@ -134,7 +134,6 @@
         <script src="/public/js/bootstrap/3.3.5/bootstrap.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <!-- Fin footer -->
-        <a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-arrow-up"></i></a>
         <!-- jQuery -->
         <script src="vendor/jquery/jquery.js"></script>        
         <script src="js/bootstrap.min.js"></script>

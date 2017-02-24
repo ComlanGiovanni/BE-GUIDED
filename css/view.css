@@ -256,6 +256,16 @@ label {
 .row {
     padding-bottom: 25px;
 }
+.comments {
+    padding-top: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    background-color: white;
+    color: rgba(2, 23, 37, 0.7);
+    width: 100%;
+    margin-bottom: 10px;
+}
 
 @media (min-width: 768px){ 
 
@@ -318,4 +328,40 @@ label {
 .container-fluid {
     margin-bottom: 150px;
     margin-top: 150px;
+    background-color: rgba(0,0,0,.5);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    border-radius: 3px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    margin-right: 50px;
+    margin-left: 50px;
+}
+}
+.navbar-nav>li>.dropdown-menu {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-radius: 0px;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
 }

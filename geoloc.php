@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Guide Me ! | Géolocalisation</title>
         <!-- Inclusion de l'API Google Maps -->
-        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+
         <script>
 
             // On vérifie si le navigateur supporte la géolocalisation
@@ -131,4 +131,6 @@
         </div>    
         <div id="mapDiv"></div>
     </body>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AZFZERGOPNRGPNERGPIONERGPN&exp&sensor=false&libraries=places">sensor=false"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 </html>

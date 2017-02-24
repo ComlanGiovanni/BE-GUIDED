@@ -96,7 +96,7 @@ Image credits: unsplash.com
 /********************************/
 /*          Custom Buttons      */
 /********************************/
-.btn.btn-lg {padding: 10px 40px;}
+.btn.btn-lg {padding: 10px 10px;}
 .btn.btn-hero,
 .btn.btn-hero:hover,
 .btn.btn-hero:focus {
@@ -252,7 +252,7 @@ a:focus {
     text-align: center;
     color: white;
     text-shadow: 4px 4px 2px rgba(76,76,76, 1);
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), rgba(0,0,0,0.5) url(../img/bckg4.jpg) center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), rgba(0,0,0,-1.5) url(../img/bckg4.jpg) center no-repeat;
     background-color: black;
     background-size: cover;
 }
@@ -1022,7 +1022,7 @@ Image credits: unsplash.com
 /********************************/
 /*          Custom Buttons      */
 /********************************/
-.btn.btn-lg {padding: 10px 40px;}
+.btn.btn-lg {padding: 10px 10px;}
 .btn.btn-hero,
 .btn.btn-hero:hover,
 .btn.btn-hero:focus {
@@ -1108,4 +1108,31 @@ hr {
 .social_item4:hover
 {
     background-color:   #C60800;
+}
+.navbar-nav>li>.dropdown-menu {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-radius: 0px;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
 }

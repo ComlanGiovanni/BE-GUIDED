@@ -52,7 +52,7 @@
             <h5>Prix :</h5>
             <br> <?php echo $info[0]['price_offer']; ?>
             <br>
-            <button>Ajouter au Panier</button>
+            <input type="button" class="btn btn-primary" value="Ajouter au panier">
         </div>
     </div>
     <div class="row">
@@ -65,7 +65,7 @@
             <p></p>
         </div>
     </div>
-    <div class="row">
+    <div class="row comments">
         <h4>Commentaires</h4>
         <br>
         <?php $of->list_comment(); ?>
@@ -87,8 +87,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
 <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-<script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/jskey=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+        
 
 <!-- Theme JavaScript -->
 <script src="js/project.min.js"></script>
