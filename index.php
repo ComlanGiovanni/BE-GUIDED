@@ -45,14 +45,14 @@
                 <div class="container">
                     <div class="row">
                         <div>
-                            <img src="img/lg.png" alt=""> <br>
-                            <h1 class="brand-heading">
+                            <img src="img/lg.png" alt="" class=" wow fadeInDown"> <br>
+                            <h1 class="brand-heading  wow fadeInDown">
                                 Guide <span style="color:red;">ME</span> ! </h1>
                             <p class="intro-text">
                             </p>
-                            <hr>
+                            <hr class=" wow fadeIn">
                             <br>
-                            <h2>On vous fait voir la France autrement...</h2><br>
+                            <h2 class=" wow fadeInLeft">On vous fait voir la France autrement...</h2><br>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
             </ol>
 
             <!-- Wrapper for slides -->
-            <div class="carousel-inner" id="moreinfo">
+            <div class="carousel-inner  " id="moreinfo">
                 <div class="item slides active">
                     <div class="slide-1">
                         <div class="overlay"></div>
@@ -193,26 +193,28 @@
         <a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-angle-up"></i></a>
         <!-- jQuery -->
         <script src="vendor/jquery/jquery.js"></script>        
-<!-- Bootstrap Core JavaScript -->
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-<!-- Plugin JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <!-- Plugin JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-<!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+        <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
-<!-- Theme JavaScript -->
+        <!-- Theme JavaScript -->
 
-<!-- Bootstrap Core JavaScript -->
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
 
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<!-- Theme JavaScript -->
-<script src="js/project.min.js"></script>
+        <!-- Theme JavaScript -->
+        <script src="js/project.min.js"></script>
+        <script src="vendor/animate.css/animate.min.css"></script>
+        <script src="vendor/wow/wow.min.js"></script>
 
-</body>
+    </body>
 </html>
