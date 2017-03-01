@@ -124,4 +124,9 @@ ON users.id_user = comment.id_user WHERE offers.id_offer = :id', [':id' => $_GET
         return $v;
     }
     
+    public function last_offer ($db)
+    {
+        $last = $db->query('SELECT * FROM offers ORDER BY id_offer DESC LIMIT 4')->fetchAll();
+        return $last;
+    }
 }
