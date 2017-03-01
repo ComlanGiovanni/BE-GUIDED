@@ -1,3 +1,11 @@
+<?php
+require_once 'php/load.php';
+$db = App::getDatabase();
+if (!empty($_POST)) {
+    App::getOffer()->create_offer($db,$_POST['title'],$_POST['city'],$_POST['cdp'],$_POST['adr'],$_POST['price'],$_POST['desc'],'img');
+    App::redirect('my_offer.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -31,9 +39,7 @@
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
         <!-- Navigation -->
         <a href="javascript:document.location.href='#myModal'"></a>
-        <?php include 'php/nav.php';
-        $of->create_offer();
-        ?>
+        <?php include 'php/nav.php'; ?>
         <div class="container cont">
             <h1 class="hoffer"><i class="fa fa-plus" aria-hidden="true"></i> Créez votre offre</h1>
             <hr>

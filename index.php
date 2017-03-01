@@ -1,5 +1,5 @@
 <?php
-
+require_once 'php/load.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">

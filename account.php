@@ -1,4 +1,7 @@
 <?php
+require_once 'php/load.php';
+$db = App::getDatabase();
+$v = App::getUser()->view_profile($db);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -51,74 +54,75 @@
                 <div class="col-md-9 personal-info">
                     <h3>Informations personnelles</h3>
 
-                    <form class="form-horizontal" role="form">
+                    <form method="post" class="form-horizontal" role="form">
                         <div class="form-group">
                             <label class="col-lg-3 control-label">Nom:</label>
                             <div class="col-lg-8">
-                                <input class="form-control" type="text" value="<?= $v[0]['lastname']; ?>">
+                                <input class="form-control" name="lastname" type="text" value="<?= $v['lastname']; ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-3 control-label">Prénom:</label>
                             <div class="col-lg-8">
-                                <input class="form-control" type="text" value="<?= $v[0]['firstname']; ?>">
+                                <input class="form-control" name="firstname" type="text" value="<?= $v['firstname']; ?>">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-lg-3 control-label">Email:</label>
                             <div class="col-lg-8">
-                                <input class="form-control" type="text"  value="<?= $v[0]['email']; ?>">
+                                <input class="form-control" name="email" type="text" value="<?= $v['email']; ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-3 control-label">Date de naissance:</label>
                             <div class="col-lg-8">
-                                <input class="form-control" type="date" value="11111122333">
+                                <input class="form-control" type="date" name="bd" value="<?= $v['birthday_date'];?>">
                             </div>
                         </div>
+                        <?php if (Session::getInstance()->read('guide')) : ?>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Mobile:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" name="mobile" type="text" value="<?= $v['num_mobile'];?>">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Ville:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" name="city" type="text" value="<?= $v['city'];?>">
+                                </div>
+                            </div>
 
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Mobile:</label>
-                            <div class="col-lg-8">
-                                <input class="form-control" type="text" >
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Code postal:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" name="cdp" type="text" value="<?= $v['postal_code'];?>">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Ville:</label>
-                            <div class="col-lg-8">
-                                <input class="form-control" type="text" >
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Adresse:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" name="address" type="text" value="<?= $v['address'];?>">
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Code postal:</label>
-                            <div class="col-lg-8">
-                                <input class="form-control" type="text" >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Adresse:</label>
-                            <div class="col-lg-8">
-                                <input class="form-control" type="text" >
-                            </div>
-                        </div>
+                        <?php endif; ?>
                         <div class="form-group">
                             <label class="col-lg-3 control-label">Mot de passe:</label>
                             <div class="col-lg-8">
-                                <input class="form-control" type="password">
+                                <input class="form-control" type="password" name="password" placeholder="Nouveau Mot de Passe">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-3 control-label">Confirmation:</label>
                             <div class="col-lg-8">
-                                <input class="form-control" type="password">
+                                <input class="form-control" type="password" name="password_confirm" placeholder="Confirmation Nouveau Mot de Passe">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-3 control-label"></label>
                             <div class="col-lg-8">
-                                <input type="button" class="btn btn-primary" value="Sauvegarder">
+                                <input type="submit" class="btn btn-primary" value="Sauvegarder">
                                 <span></span>
                                 <input type="reset" class="btn btn-default" value="Annuler">
                             </div>

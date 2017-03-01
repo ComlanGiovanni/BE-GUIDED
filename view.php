@@ -1,7 +1,8 @@
 <?php
-
+require_once 'php/load.php';
+$db = App::getDatabase();
+$info = App::getOffer()->view_offer($db);
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -32,43 +33,42 @@
     <![endif]-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-          <link rel="stylesheet" href="css/view.css">
+    <link rel="stylesheet" href="css/view.css">
 
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <!-- Navigation -->
 <a href="javascript:document.location.href='#myModal'"></a>
 <?php include 'php/nav.php'; ?>
-<?php $info = $of->view_offer(); ?>
 <div class="container-fluid">
     <div class="row">
-        <h1> <?php echo $info[0]['name_offer']; ?></h1>
+        <h1> <?php echo $info['name_offer']; ?></h1>
     </div>
     <div class="row">
         <div class="col-md-6">
-            <?php echo '<img src="guides/guide_' . $info[0]['id_guide'] . '/' . $info[0]['img_offer'] . '" alt="no img">'; ?>
+            <?php echo '<img src="guides/guide_' . $info['id_guide'] . '/' . $info['img_offer'] . '" alt="no img">'; ?>
         </div>
         <div class="col-md-4 col-md-offset-8">
             <h5>Prix :</h5>
-            <br> <?php echo $info[0]['price_offer']; ?>
+            <br> <?php echo $info['price_offer']; ?>
             <br>
-            <input type="button" class="btn btn-primary" value="Ajouter au panier">
+            <button>Ajouter au Panier</button>
         </div>
     </div>
     <div class="row">
         <div>
-            <p><?php echo $info[0]['description']; ?></p>
+            <p><?php echo $info['description']; ?></p>
         </div>
         <div>
-            <p><?php echo $info[0]['place_offer'] . ' ' . $info[0]['city_offer']; ?></p>
+            <p><?php echo $info['place_offer'] . ' ' . $info['city_offer']; ?></p>
             <br>
             <p></p>
         </div>
     </div>
-    <div class="row comments">
+    <div class="row">
         <h4>Commentaires</h4>
         <br>
-        <?php $of->list_comment(); ?>
+        <?php App::getOffer()->list_comment($db); ?>
     </div>
 </div>
 <?php include 'php/footer.php'; ?>
@@ -76,7 +76,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <!-- Fin footer -->
-<a href="#page-top" title="Haut de page" class="scrollup">  <a href="#page-top" title="Haut de page" class="scrollup"><i class="fa fa-angle-up" aria-hidden="true"></i></a></a>
+<a href="#page-top" title="Haut de page" class="scrollup"> <a href="#page-top" title="Haut de page" class="scrollup"><i
+                class="fa fa-angle-up" aria-hidden="true"></i></a></a>
 <!-- jQuery -->
 <script src="vendor/jquery/jquery.js"></script>
 
@@ -87,8 +88,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
 <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/jskey=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
-        
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/jskey=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
 
 <!-- Theme JavaScript -->
 <script src="js/project.min.js"></script>

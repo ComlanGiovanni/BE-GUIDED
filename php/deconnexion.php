@@ -1,4 +1,5 @@
 <?php
-require 'SQL_User.php';
-$req = new SQL_User('root', '', 'be');
-$req->deconnexion();
+require 'load.php';
+App::getUser()->deconnexion();
+Session::getInstance()->setFlash('success', 'Vous êtes maintenant déconnecté');
+App::redirect('../connexion.php');
