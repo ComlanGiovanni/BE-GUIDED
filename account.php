@@ -33,8 +33,7 @@ $v = App::getUser()->view_profile($db);
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
         <!-- Navigation -->
         <a href="javascript:document.location.href='#myModal'"></a>
-        <?php include 'php/nav.php';
-        $v = $req->view_profile();?>
+        <?php include 'php/nav.php'; ?>
         <div class="container cont">
             <h1 class="hprofil"><i class="fa fa-info-circle" aria-hidden="true"></i> Mon Profil</h1>
             <hr>

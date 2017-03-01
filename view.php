@@ -52,7 +52,7 @@ $info = App::getOffer()->view_offer($db);
             <h5>Prix :</h5>
             <br> <?php echo $info['price_offer']; ?>
             <br>
-            <button>Ajouter au Panier</button>
+            <button class="btn btn-primary">Ajouter au Panier</button>
         </div>
     </div>
     <div class="row">
@@ -65,7 +65,7 @@ $info = App::getOffer()->view_offer($db);
             <p></p>
         </div>
     </div>
-    <div class="row">
+    <div class="row comments">
         <h4>Commentaires</h4>
         <br>
         <?php App::getOffer()->list_comment($db); ?>
