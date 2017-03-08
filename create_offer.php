@@ -1,6 +1,8 @@
 <?php
 require_once 'php/load.php';
 $db = App::getDatabase();
+App::getUser()->restrict();
+App::getUser()->restrictGuide();
 if (!empty($_POST)) {
     App::getOffer()->create_offer($db,$_POST['title'],$_POST['city'],$_POST['cdp'],$_POST['adr'],$_POST['price'],$_POST['desc'],'img');
     App::redirect('my_offer.php');

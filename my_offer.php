@@ -1,6 +1,8 @@
 <?php
 require_once 'php/load.php';
 $db = App::getDatabase();
+App::getUser()->restrict();
+App::getUser()->restrictGuide();
 ?>
 <!DOCTYPE html>
 <html lang="fr">

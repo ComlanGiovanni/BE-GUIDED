@@ -1,7 +1,13 @@
 <?php
 require_once 'php/load.php';
+
+App::getUser()->restrict();
 $db = App::getDatabase();
-$info = App::getOffer()->view_offer($db);
+if (isset($_GET['id'])) {
+    $info = App::getOffer()->view_offer($db);
+} else {
+    $info = null;
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -68,7 +74,7 @@ $info = App::getOffer()->view_offer($db);
     <div class="row comments">
         <h4>Commentaires</h4>
         <br>
-        <?php App::getOffer()->list_comment($db); ?>
+        <?php  if (isset($_GET['id'])) { App::getOffer()->list_comment($db); } ?>
     </div>
 </div>
 <?php include 'php/footer.php'; ?>

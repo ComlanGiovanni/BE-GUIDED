@@ -1,7 +1,13 @@
 <?php
 require_once 'php/load.php';
+App::getUser()->restrict();
+App::getUser()->restrictGuide();
 $db = App::getDatabase();
-$v = App::getOffer()->modif_offer($db);
+if (isset($_GET['id'])) {
+    $v = App::getOffer()->modif_offer($db);
+} else {
+    $v = null;
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -37,7 +43,7 @@ $v = App::getOffer()->modif_offer($db);
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <!-- Navigation -->
 <a href="javascript:document.location.href='#myModal'"></a>
-<?php include 'php/nav.php'; ?><?php $v = $of->modif_offer(); ?>
+<?php include 'php/nav.php'; ?>
 
 <div class="container cont">
     <form method="post" action="#" enctype="multipart/form-data">

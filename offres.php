@@ -1,6 +1,7 @@
 <?php
 require_once 'php/load.php';
 $db = App::getDatabase();
+App::getUser()->restrict();
 ?>
 <!DOCTYPE html>
 <html lang="fr">

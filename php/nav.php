@@ -1,5 +1,7 @@
 <?php
 require_once 'load.php';
+ini_set('display_errors', 1);
+ini_set('error_reporting', E_ALL);
 ?>
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">

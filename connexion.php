@@ -66,7 +66,7 @@ if (!empty($_POST) && !empty($_POST['email']) && !empty($_POST['pass'])) {
                     <input id="pass" name="pass" type="password" required/>
                 </div>
 
-                <p class="forgot"><a href="#">Mot de passe oublé?</a></p>
+                <p class="forgot"><a href="forget.php">Mot de passe oublé?</a></p>
 
                 <button type="submit" class="button button-block"/>
                 Connexion</button>

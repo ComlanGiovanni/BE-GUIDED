@@ -156,10 +156,10 @@ $val = App::getOffer()->last_offer($db);
         <div class="controls">
             <ul class="nav">
                 <?php for ($i = 0; $i < 4; $i++) : ?>
-                    <li data-target="#custom_carousel" data-slide-to="<?php echo $i; ?>" <?php if ($i == 0) {
-                        echo ' class="active"';
-                    } ?>><a href="#"><img
-                                    src="<?php echo $val[$i]['img_offer'] ?>" alt="no img">
+                    <li data-target="#custom_carousel" data-slide-to="<?php echo $i; ?>" class="controls <?php if ($i == 0) {
+                        echo 'active';
+                    } ?>"><a href="#"><img
+                                    src="<?php echo $val[$i]['img_offer']; ?>" alt="no img">
                             <small><?php echo $val[$i]['name_offer']; ?></small>
                         </a>
                     </li>
@@ -170,7 +170,6 @@ $val = App::getOffer()->last_offer($db);
         </div>
     </div>
     <!-- End Carousel -->
-</div>
 </div>
 <!-- Fin -->
 <?php include 'php/footer.php'; ?>

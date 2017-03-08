@@ -11,11 +11,14 @@ class User
     
     public function register ($db, $lastname, $firstname, $password, $email)
     {
-        $db->query('INSERT INTO users(lastname, firstname, password, email) VALUES (:lname, :fname, :password, :email)',
+        $token = App::random(60);
+        $db->query('INSERT INTO users(lastname, firstname, password, email, confirmation_token) VALUES (:lname, :fname, :password, :email, :token)',
             [':lname' => htmlspecialchars($lastname), ':fname' => htmlspecialchars($firstname),
                 ':password' => password_hash(htmlspecialchars($password), PASSWORD_BCRYPT),
-                ':email' => htmlspecialchars($email)]);
-        $msg = 'Pour valider votre compte, <a href="localhost/BE-GUIDED/emailcheck.php?id=' . $email . '">cliquez-ici.</a>';
+                ':email' => htmlspecialchars($email),
+                ':token' => $token]);
+        $user_id = $db->lastInsertId();
+        $msg = 'Pour valider votre compte, <a target="_blank" href="BE-GUIDED/confirm.php?id=' . $user_id . '&token=' . $token . '">cliquez-ici.</a>';
         mail($email, 'Validation Compte BE-GUIDED', $msg);
     }
     
@@ -23,7 +26,15 @@ class User
     {
         if (!$this->session->read('connected')) {
             $this->session->setFlash('danger', "Vous n'avez pas le droit d'accéder à cette page");
-            App::redirect('oonnexion.php');
+            App::redirect('connexion.php');
+        }
+    }
+    
+    public function restrictGuide ()
+    {
+        if (!$this->session->read('guide')) {
+            $this->session->setFlash('danger', "Vous n'avez pas le droit d'accéder à cette page");
+            App::redirect('account.php');
         }
     }
     
@@ -67,6 +78,7 @@ class User
         $guide = $db->query('SELECT * FROM users INNER JOIN guide ON users.id_user = guide.id_user WHERE users.id_user = :id',
             [':id' => Session::getInstance()->doubleRead('connected', 'id_user')])->fetch();
         Session::getInstance()->write('guide', $guide);
+        App::redirect('account.php');
     }
     
     public function deconnexion ()
@@ -121,5 +133,40 @@ class User
                 [':bd' => $_POST[$name_field], ':id' => $_SESSION['connected']['id_user']]);
             App::redirect('account.php');
         }
+    }
+    
+    public function confirm ($db, $id_user, $token)
+    {
+        $user = $db->query('SELECT * FROM users WHERE id_user = :id', [':id' => $id_user])->fetch();
+        if ($user && $user['confirmation_token'] == $token) {
+            $db->query('UPDATE users SET confirmation_token = NULL, confirmed_at = NOW() WHERE id_user = :id', [':id' => $id_user]);
+            $this->session->write('connected', $user);
+            
+            return true;
+        }
+        
+        return false;
+    }
+    
+    public function reset_password ($db, $email)
+    {
+        $user = $db->query('SELECT * FROM users WHERE email = :email', [':email' => $email])->fetch();
+        if ($user) {
+            $reset_token = App::random(60);
+            $user_id = $user['id_user'];
+            $db->query('UPDATE users set reset_token = :reset, reset_at = NOW() WHERE id_user = :id',
+                [':reset' => $reset_token, ':id' => $user_id]);
+            mail($email, 'Réinitialisation de votre mot de passe', 'Afin de réinitialiser votre mot de passe <a target="_blank" href="BE-GUIDED/reset.php?id=' . $user_id . '&token=' . $reset_token . '">cliquez-ici.</a>');
+            
+            return $user;
+        }
+        
+        return false;
+    }
+    
+    public function checkReset ($db, $user_id, $token)
+    {
+        return $db->query('SELECT * FROM users WHERE id_user = :id AND reset_token = :token AND reset_at < DATE_SUB(NOW(), INTERVAL 30 MINUTE )',
+            [':id' => $user_id, ':token' => $token])->fetch();
     }
 }
