@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 15 Février 2017 à 14:45
+-- Généré le :  Mer 08 Mars 2017 à 13:27
 -- Version du serveur :  5.7.14
--- Version de PHP :  5.6.25
+-- Version de PHP :  7.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -35,14 +35,6 @@ CREATE TABLE `comment` (
   `id_offer` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `comment`
---
-
-INSERT INTO `comment` (`id_comment`, `msg_comment`, `date_comment`, `date_modif_comment`, `id_user`, `id_offer`) VALUES
-(1, 'Ce produit est excellent', '2017-02-15', NULL, 1, 1),
-(2, 'encore ', '2017-02-15', '2017-02-15', 1, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -60,13 +52,6 @@ CREATE TABLE `guide` (
   `other_info` text,
   `id_user` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Contenu de la table `guide`
---
-
-INSERT INTO `guide` (`id_guide`, `city`, `postal_code`, `address`, `num_mobile`, `languages`, `hobbies`, `other_info`, `id_user`) VALUES
-(1, 'RE', 23332, '13 rue de tert', '0687496388', '  anglais espagnol      ', '    literature    ', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -102,14 +87,6 @@ CREATE TABLE `offers` (
   `id_note` int(11) DEFAULT NULL,
   `duration` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Contenu de la table `offers`
---
-
-INSERT INTO `offers` (`id_offer`, `name_offer`, `city_offer`, `postal_code_offer`, `place_offer`, `price_offer`, `description`, `img_offer`, `date_publication`, `date_modification`, `id_guide`, `id_planning`, `id_note`, `duration`) VALUES
-(1, 'a', 'a', 1, 'a', 0.04, 'a', NULL, '2017-02-08', '2017-02-08', 1, NULL, NULL, NULL),
-(2, 'test2', 'londres', 4555, '12 street blabla', 55.6, NULL, NULL, '2017-02-15', NULL, 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -167,17 +144,12 @@ CREATE TABLE `users` (
   `img_profil` varchar(255) DEFAULT NULL,
   `birthday_date` date DEFAULT NULL,
   `id_guide` int(11) DEFAULT NULL,
-  `certificate` tinyint(1) DEFAULT '0'
+  `certificate` tinyint(1) DEFAULT '0',
+  `confirmation_token` varchar(255) DEFAULT NULL,
+  `confirmed_at` date DEFAULT NULL,
+  `reset_token` varchar(255) DEFAULT NULL,
+  `reset_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Contenu de la table `users`
---
-
-INSERT INTO `users` (`id_user`, `lastname`, `firstname`, `password`, `email`, `img_profil`, `birthday_date`, `id_guide`, `certificate`) VALUES
-(1, 'T1', 't1', '$5$rounds=2000$salt$lhuw.ir8WwXA2z2dL1g5yy3EE5A9RT5pfEbosBeFYSD', 't@t.t', NULL, NULL, NULL, NULL),
-(2, 'aze', 'aze', '$5$rounds=2000$salt$r2fKA3boRWXafQRCZODAb6IJTQ7DY6y/8oOu5tr4Vg/', 'aze@az.az', NULL, NULL, NULL, NULL),
-(3, 'laurent', 'panek', '$5$rounds=2000$salt$nXENdXA8cybE7hPmIjpGIzweHp.XNv90c1MGDu4Qqt3', 'laurent.panek@ynov.com', NULL, NULL, NULL, 0);
 
 --
 -- Index pour les tables exportées
@@ -248,12 +220,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `guide`
 --
 ALTER TABLE `guide`
-  MODIFY `id_guide` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_guide` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `note`
 --
@@ -263,7 +235,7 @@ ALTER TABLE `note`
 -- AUTO_INCREMENT pour la table `offers`
 --
 ALTER TABLE `offers`
-  MODIFY `id_offer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_offer` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `planning`
 --
@@ -278,7 +250,7 @@ ALTER TABLE `tag`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Contraintes pour les tables exportées
 --
