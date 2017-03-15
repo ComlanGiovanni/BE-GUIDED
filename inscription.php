@@ -1,25 +1,27 @@
 <?php
 require_once 'php/load.php';
 $db = App::getDatabase();
-$validator = new Validator($_POST, Session::getInstance());
-$validator->isAlphaNum('lastname', 'Votre Nom ne doit contenir que des caractère alphanumérique');
-if ($validator->isValid()) {
-    $validator->isUnique('lastname', $db, 'users', 'Votre Nom d\'utilisateur est déjà utilisé ! Veuillez changer.');
-}
-$validator->isAlphaNum('firstname', 'Votre Prenom ne doit contenir que des caractère alphanumérique');
-if ($validator->isValid()) {
-    $validator->isUnique('firstname', $db, 'users', 'Votre Nom d\'utilisateur est déjà utilisé ! Veuillez changer.');
-}
-$validator->isEmail('email', 'Votre email n\'est pas valide !');
-if ($validator->isValid()) {
-    $validator->isUnique('email', $db, 'users', 'Votre email est déjà utilisé ! Veuillez changer.');
-}
-$validator->isConfirmed('pass', 'Les mots de passe ne correspondent pas.');
-
-if ($validator->isValid()) {
-    App::getUser()->register($db, $_POST['firstname'], $_POST['lastname'], $_POST['pass'], $_POST['email']);
-    Session::getInstance()->setFlash('success', 'Un email de confirmation vous a été envoyé pour validé votre compte');
-    App::redirect('connexion.php');
+if (!empty($_POST)) {
+    $validator = new Validator($_POST, Session::getInstance());
+    $validator->isAlphaNum('lastname', 'Votre Nom ne doit contenir que des caractère alphanumérique');
+    if ($validator->isValid()) {
+        $validator->isUnique('lastname', $db, 'users', 'Votre Nom d\'utilisateur est déjà utilisé ! Veuillez changer.');
+    }
+    $validator->isAlphaNum('firstname', 'Votre Prenom ne doit contenir que des caractère alphanumérique');
+    if ($validator->isValid()) {
+        $validator->isUnique('firstname', $db, 'users', 'Votre Nom d\'utilisateur est déjà utilisé ! Veuillez changer.');
+    }
+    $validator->isEmail('email', 'Votre email n\'est pas valide !');
+    if ($validator->isValid()) {
+        $validator->isUnique('email', $db, 'users', 'Votre email est déjà utilisé ! Veuillez changer.');
+    }
+    $validator->isConfirmed('pass', 'Les mots de passe ne correspondent pas.');
+    
+    if ($validator->isValid()) {
+        App::getUser()->register($db, $_POST['firstname'], $_POST['lastname'], $_POST['pass'], $_POST['email']);
+        Session::getInstance()->setFlash('success', 'Un email de confirmation vous a été envoyé pour validé votre compte');
+        App::redirect('connexion.php');
+    }
 }
 ?>
 <!DOCTYPE html>

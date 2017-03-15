@@ -1,8 +1,29 @@
 <?php
 require_once 'php/load.php';
 $db = App::getDatabase();
-App::getUser()->restrict();
-$v = App::getUser()->view_profile($db);
+$user = App::getUser();
+$user->restrict();
+$v = $user->view_profile($db);
+if (!empty($_FILES)) {
+    $user->update_img($db, "img_profil", "profil");
+}
+if (!empty($_POST)) {
+    $user->update_profile($db, "lastname", "lastname");
+    $user->update_profile($db, "firstname", "firstname");
+    $user->update_profile($db, "email", "email");
+    $user->update_date($db, "birthday_date", "bd");
+    $user->update_profile_guide($db, "num_mobile", "mobile");
+    $user->update_profile_guide($db, "city", "city");
+    $user->update_profile_guide($db, "postal_code", "postal_code");
+    $user->update_profile_guide($db, "address", "address");
+    $user->update_profile_guide($db, "languages", "languages");
+    $user->update_profile_guide($db, "hobbies", "hobbies");
+    $user->update_profile_guide($db, "other_info", "other_info");
+    $user->update_pass($db, "password");
+    App::redirect('account.php');
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -44,10 +65,13 @@ $v = App::getUser()->view_profile($db);
         <!-- left column -->
         <div class="col-md-3">
             <div class="text-center">
-                <img src="img/profil-m.png" width="100px" height="100px" class="avatar img-circle" alt="avatar">
-                <h6>Ma photo de profil</h6>
-
-                <input type="file" class="form-control">
+                <?php
+                echo '<img src="users/user_' . Session::getInstance()->doubleRead('connected', 'id_user') . '/' . Session::getInstance()->doubleRead('connected', 'img_profil') . '" width="100px" height="100px" class="avatar img-circle" alt="avatar">';
+                ?>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <input name="profil" type="file" class="form-control">
+                    <button type="submit">envoyer</button>
+                </form>
             </div>
             <?php if ($v['confirmed_at'] != null) : ?>
                 <div>
@@ -65,7 +89,7 @@ $v = App::getUser()->view_profile($db);
         <div class="col-md-9 personal-info">
             <h3>Informations personnelles</h3>
 
-            <form method="post" class="form-horizontal" role="form">
+            <form action="" method="post" class="form-horizontal" role="form">
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Nom:</label>
                     <div class="col-lg-8">
@@ -115,6 +139,25 @@ $v = App::getUser()->view_profile($db);
                         <label class="col-lg-3 control-label">Adresse:</label>
                         <div class="col-lg-8">
                             <input class="form-control" name="address" type="text" value="<?= $v['address']; ?>">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Langue:</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" name="languages" type="text" value="<?= $v['languages']; ?>">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Centres d'intérêts:</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" name="hobbies" type="text" value="<?= $v['hobbies']; ?>">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Experience:</label>
+                        <div class="col-lg-8">
+                            <textarea name="other_info" class="form-control" cols="30"
+                                      rows="3"><?= $v['other_info']; ?></textarea>
                         </div>
                     </div>
                 <?php endif; ?>

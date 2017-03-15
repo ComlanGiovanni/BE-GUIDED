@@ -36,9 +36,13 @@ class Session
     public function write($key, $value){
         $_SESSION[$key] = $value;
     }
+    
+    public function doubleWrite($key1, $key2, $value){
+        $_SESSION[$key1][$key2] = $value;
+    }
 
     public function read($key){
-        return isset($_SESSION[$key]);
+        return isset($_SESSION[$key]) ? $_SESSION[$key] : null;
     }
     
     public function doubleRead($key1, $key2) {
@@ -48,6 +52,12 @@ class Session
     public function delete($key){
         if (isset($_SESSION[$key])) {
             unset($_SESSION[$key]);
+        }
+    }
+    
+    public function doubleDelete($keyAccess, $key){
+        if (isset($_SESSION[$keyAccess][$key])) {
+            unset($_SESSION[$keyAccess][$key]);
         }
     }
 

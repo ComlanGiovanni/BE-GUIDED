@@ -33,4 +33,8 @@ class Database
     {
         return $this->dbh->lastInsertId();
     }
+    
+    public function setAttribute($attribut, $value) {
+        $this->dbh->setAttribute($attribut, $value);
+    }
 }

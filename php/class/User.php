@@ -111,18 +111,59 @@ class User
         if (!empty($_POST[$name_field])) {
             $db->query('UPDATE `users` SET ' . $field . ' = :val WHERE `id_user` = :id',
                 [':val' => htmlspecialchars($_POST[$name_field]),
-                    ':id' => $_SESSION['connected']['id_user']]);
-            App::redirect('account.php');
+                    ':id' => $this->session->doubleRead('connected', 'id_user')]);
+        }
+    }
+    
+    public function update_profile_guide ($db, $field, $name_field)
+    {
+        if (!empty($_POST[$name_field])) {
+            $db->query('UPDATE `guide` SET ' . $field . ' = :val WHERE `id_user` = :id',
+                [':val' => htmlspecialchars($_POST[$name_field]),
+                    ':id' => $this->session->doubleRead('connected', 'id_user')]);
         }
     }
     
     public function update_pass ($db, $pass)
     {
-        if (!empty($_POST['password'])) {
+        if (!empty($_POST[$pass])) {
             $db->query('UPDATE `users` SET `password`= :password WHERE `id_user` = :id',
-                [':password' => password_hash($pass, PASSWORD_BCRYPT),
-                    ':id' => $_SESSION['connected']['id_user']]);
-            App::redirect('account.php');
+                [':password' => password_hash($_POST[$pass], PASSWORD_BCRYPT),
+                    ':id' => $this->session->doubleRead('connected', 'id_user')]);
+        }
+    }
+    
+    public function update_img ($db, $field, $name_field)
+    {
+        if (!empty($_FILES[$name_field]) && !empty($_FILES)) {
+            $db->query('UPDATE `users` SET ' . $field . ' = :val WHERE `id_user` = :id',
+                [':val' => htmlspecialchars($_FILES[$name_field]['name']),
+                    ':id' => $this->session->doubleRead('connected', 'id_user')]);
+            $this->upload($name_field);
+            $this->session->doubleWrite('connected', $field, $_FILES[$name_field]['name']);
+        }
+    }
+    
+    public function upload ($image)
+    {
+        if (!empty($_FILES) and !empty($_FILES[$image])) {
+            $finfo = finfo_open(FILEINFO_MIME_TYPE); // Vérifie le type MIME du fichier
+            $mime = finfo_file($finfo, $_FILES[$image]['tmp_name']); // Regarde dans ce fichier le type MIME
+            finfo_close($finfo); // Fermeture de la lecture
+            $filename = explode('.', $_FILES[$image]['name']); // Explosion du nom sur le point
+            $extension = $filename[count($filename) - 1]; // L'extension du fichier
+            $extension_valide = ['png', 'jpeg', 'gif', 'jpg'];
+            $mime_valide = ['image/png', 'image/jpeg', 'image/gif', 'image/jpg'];
+            if ((in_array($extension, $extension_valide) and in_array($mime, $mime_valide))) {
+                if ($_FILES[$image]['size'] < 20971520) {
+                    $dossier = 'users/user_' . $this->session->doubleRead('connected', 'id_user');
+                    if (!is_dir($dossier)) {
+                        mkdir($dossier, 0777, true);
+                    }
+                    move_uploaded_file($_FILES[$image]['tmp_name'],
+                        $dossier . '/' . $_FILES[$image]['name']);
+                }
+            }
         }
     }
     
@@ -130,8 +171,7 @@ class User
     {
         if (!empty($_POST[$name_field])) {
             $db->query('UPDATE `users` SET ' . $field . ' = STR_TO_DATE(:bd, "%Y-%m-%d") WHERE `id_user` = :id',
-                [':bd' => $_POST[$name_field], ':id' => $_SESSION['connected']['id_user']]);
-            App::redirect('account.php');
+                [':bd' => $_POST[$name_field], ':id' => $this->session->doubleRead('connected', 'id_user')]);
         }
     }
     
