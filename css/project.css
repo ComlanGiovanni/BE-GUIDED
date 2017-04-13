@@ -1076,7 +1076,6 @@ hr {
     font-size: 24px;
     background-color: #2C2C2C;
     padding-bottom: 25px;
-
 }
 .social_txt {
     padding-top: 10px;
@@ -1133,4 +1132,7 @@ hr {
     background-image: none;
     border: 1px solid transparent;
     border-radius: 0px;
+}
+.carousel-inner {
+    margin-bottom: 50px;
 }

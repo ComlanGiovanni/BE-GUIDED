@@ -68,14 +68,15 @@ if (!empty($_POST)) {
                     <label>
                         Nom<span class="req">*</span>
                     </label>
-                    <input name="lastname" type="text" required>
+                    <input id="lst" name="lastname" type="text" value="" >
+                    <span id="error" class="error"></span>
                 </div>
 
                 <div class="field-wrap">
                     <label>
                         Prénom<span class="req">*</span>
                     </label>
-                    <input name="firstname" type="text" required>
+                    <input id="fst" name="firstname" type="text" value="" >
                 </div>
             </div>
 
@@ -83,21 +84,21 @@ if (!empty($_POST)) {
                 <label>
                     Adresse e-mail<span class="req">*</span>
                 </label>
-                <input name="email" type="email" required>
+                <input id="mail"name="email" type="email" value="">
             </div>
 
             <div class="field-wrap">
                 <label>
                     Mot de passe<span class="req">*</span>
                 </label>
-                <input name="pass" type="password" required>
+                <input id="pass" name="pass" type="password" value="">
             </div>
 
             <div class="field-wrap">
                 <label>
                     Confirmez votre mot de passe<span class="req">*</span>
                 </label>
-                <input name="pass_confirm" type="password" required>
+                <input id="repass" name="pass_confirm" type="password" value="" >
             </div>
 
             <button type="submit" class="button button-block">Inscription</button>

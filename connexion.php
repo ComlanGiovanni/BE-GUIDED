@@ -56,7 +56,7 @@ if (!empty($_POST) && !empty($_POST['email']) && !empty($_POST['pass'])) {
                     <label>
                         Adresse e-mail<span class="req">*</span>
                     </label>
-                    <input name="email" type="email" required/>
+                    <input id="mail" name="email" type="email" required/>
                 </div>
 
                 <div class="field-wrap">
@@ -83,7 +83,7 @@ if (!empty($_POST) && !empty($_POST['email']) && !empty($_POST['pass'])) {
 
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-<script src="js/inscon.js"></script>
+<script src="js/connexion.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -95,7 +95,6 @@ if (!empty($_POST) && !empty($_POST['email']) && !empty($_POST['pass'])) {
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
 <!-- Theme JavaScript -->
-<script src="js/project.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/public/js/bootstrap/3.3.5/bootstrap.min.js"></script>
 
