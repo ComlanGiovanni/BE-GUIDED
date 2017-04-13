@@ -46,6 +46,7 @@ if (!empty($_POST)) {
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <!-- Theme CSS -->
     <link href="css/inscription.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/flash.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

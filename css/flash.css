@@ -1,0 +1,17 @@
+.flashes {
+    margin-top: 50px;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    text-align:center;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 0;
+    border: 0px;
+    border-radius: 0px;
+    text-align: center;
+}

@@ -61,6 +61,7 @@ if (!empty($_POST) && !empty($_POST['email'])) {
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <!-- Theme CSS -->
     <link href="css/forget.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/flash.css">
 
 </head>
 <body>

@@ -54,7 +54,8 @@ ini_set('error_reporting', E_ALL);
                         
                         echo '
                          <li><a href="offres.php"><i class="fa fa-eye" aria-hidden="true"></i> Voir les offres</a></li>
-                        <li role="separator" class="divider"></li> 
+                         <li><a href="guide.php"><i class="fa fa-eye" aria-hidden="true"></i> Voir les guides</a></li>
+                        <li role="separator" class="divider"></li>
                         <li><a href="php/deconnexion.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</a></li> 
                     </ul>
                 </li>
@@ -71,13 +72,8 @@ ini_set('error_reporting', E_ALL);
         </div>
         <!-- /.container -->
     </nav>
+<div class="flashes">
 
-<?php if (Session::getInstance()->hasFlashes()): ?>
-    <?php foreach (Session::getInstance()->getFlashes() as $type => $message) : ?>
-        <?php foreach ($message as $msg) : ?>
-            <div class="alert alert-<?= $type; ?>">
-                <li><?= $msg; ?></li>
-            </div>
-        <?php endforeach; ?>
-    <?php endforeach; ?>
-<?php endif; ?>
+</div>
+<script src="vendor/jquery/jquery.js"></script>
+<script src="js/flash.js"></script>

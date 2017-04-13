@@ -58,7 +58,7 @@ if (isset($_GET['id'])) {
             <h5>Prix :</h5>
             <br> <?php echo $info['price_offer']; ?>
             <br>
-            <button class="btn btn-primary">Ajouter au Panier</button>
+            <a href="validate.php?id=<?php echo $info['id_offer'];?>" class="btn btn-primary">Réservez</a>
         </div>
     </div>
     <div class="row">

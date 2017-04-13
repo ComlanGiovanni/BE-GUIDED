@@ -33,6 +33,7 @@ if (!empty($_POST) && !empty($_POST['email']) && !empty($_POST['pass'])) {
           type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <!-- Theme CSS -->
+    <link rel="stylesheet" href="css/flash.css">
     <link href="css/connexion.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

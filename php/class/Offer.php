@@ -159,7 +159,7 @@ ON users.id_user = comment.id_user WHERE offers.id_offer = :id', [':id' => $_GET
     
     public function last_offer ($db)
     {
-        $last = $db->query('SELECT * FROM offers ORDER BY id_offer DESC LIMIT 4')->fetchAll();
+        $last = $db->query('SELECT * FROM offers INNER JOIN guide on guide.id_guide = offers.id_guide ORDER BY offers.id_offer DESC LIMIT 4')->fetchAll();
         
         return $last;
     }

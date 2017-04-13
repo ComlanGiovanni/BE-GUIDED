@@ -36,6 +36,7 @@ $val = App::getOffer()->last_offer($db);
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Theme CSS -->
     <link href="css/project.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/flash.css">
 
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -135,8 +136,8 @@ $val = App::getOffer()->last_offer($db);
                     } ?>">
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="col-md-3"><img src="<?php echo $val[$i]['img_offer']; ?>" height="250px"
-                                                           width="350px" class="img-responsive"
+                                <div class="col-md-3"><img src="guides/guide_<?php echo $val[$i]['id_guide'].'/'.$val[$i]['img_offer']; ?>" height="200px"
+                                                           width="250px" class="img-responsive"
                                                            alt="http://placehold.it/250x350"></div>
                                 <div class="col-md-9">
                                     <h2 class="carousel"><?php echo $val[$i]['name_offer']; ?></h2>

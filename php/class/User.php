@@ -97,6 +97,43 @@ class User
         return $v;
     }
     
+    public function list_guide ($db)
+    {
+        $i = $db->query('SELECT * FROM guide INNER JOIN users
+ ON users.id_user = guide.id_user ORDER BY guide.id_guide DESC')->fetchAll();
+        $nb_page = ceil(count($i) / 10);
+        $data = [];
+        for ($j = 0; $j < $nb_page; $j++) {
+            $offset = $j * 10;
+            $data[$j] = $db->query("SELECT * FROM guide INNER JOIN users
+ ON users.id_user = guide.id_user ORDER BY guide.id_guide DESC LIMIT 10 OFFSET $offset")->fetchAll();
+        }
+        if (empty($_GET['page'])) {
+            $_GET['page'] = 1;
+        }
+        if (isset($data[$_GET['page'] - 1])) {
+            foreach ($data[$_GET['page'] - 1] as $article) {
+                echo '<tr>
+                <td><img src="users/user_' . $article['id_user'] . '/' . $article['img_profil'] . '" height="150px" width="150px" alt=""></td>
+                <td>' . $article['lastname'] . ' ' . $article['firstname'] . '</td>
+                <td>' . $article['address'] . ' ' . $article['postal_code'] . ' ' . $article['city'] . '</td>
+                <td> ' . $article['languages'] . '</td>
+                <td> ' . $article['num_mobile'] . '</td>
+                <td> ' . $article['hobbies'] . "\n" . $article['other_info'] . '</td>
+                </tr>';
+            }
+            echo '<td><a style="color: #000;" href="guide.php?page=1">&lt;&lt;</a></td>';
+            for ($l = 0; $l < $nb_page; $l++) {
+                echo '<td><a style="color: black;" href="guide.php?page=' . ($l + 1) . '">' . ($l + 1) . '</a></td>';
+            }
+            echo '<td><a style="color: #000;" href="guide.php?page=' . $nb_page . '">&gt;&gt;</a></td>';
+        } else {
+            echo '<td>Cette page n\'existe pas !</td>';
+        }
+        
+        
+    }
+    
     public function isLog ()
     {
         if (!$this->session->read('connected')) {

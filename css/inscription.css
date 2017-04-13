@@ -200,7 +200,7 @@ textarea {
 .navbar-custom .navbar-toggle:active {
     outline: none;
 }
-.navbar-custom .navbar-brand:focus, {
+.navbar-custom .navbar-brand:focus {
     outline: none;
 }
 .navbar-custom a {
@@ -261,20 +261,7 @@ textarea {
         background:rgba(0,0,0,0.8);
     }
 }
-.alert-danger {
-    margin-top: 50px;
-    color: #a94442;
-    background-color: #f2dede;
-    border-color: #ebccd1;
-    text-align:center;
-}
-.alert {
-    padding: 15px;
-    margin-bottom: -70px;
-    border: 0px;
-    border-radius: 0px;
-    text-align: center;
-}
+
 .navbar-nav>li>.dropdown-menu {
     margin-top: 0;
     border-top-left-radius: 0;
