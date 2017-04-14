@@ -61,6 +61,13 @@ if (isset($_GET['id'])) {
         <tr>
             <td>Plage Horaire Souhaité</td>
         </tr>
+        <tr>
+            <td><input type="date">
+<br>
+<input type="text"> <br>
+<input type="text">
+            </td>
+        </tr>
         </tbody>
     </table>
 </div>
