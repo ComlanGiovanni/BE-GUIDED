@@ -163,4 +163,40 @@ ON users.id_user = comment.id_user WHERE offers.id_offer = :id', [':id' => $_GET
         
         return $last;
     }
+    
+    public function search_offer ($db, $var) {
+        $i = $db->query('SELECT * FROM offers INNER JOIN guide ON offers.id_guide = guide.id_guide INNER JOIN users
+ ON users.id_user = guide.id_user WHERE name_offer LIKE :search OR description LIKE :search OR place_offer LIKE :search
+  OR price_offer LIKE :search OR city_offer LIKE :search OR lastname LIKE :search OR firstname LIKE :search ORDER BY offers.date_publication DESC',[':search' => '%'. $var . '%'])->fetchAll();
+        $nb_page = ceil(count($i) / 10);
+        $data = [];
+        for ($j = 0; $j < $nb_page; $j++) {
+            $offset = $j * 10;
+            $data[$j] = $db->query("SELECT * FROM offers INNER JOIN guide ON offers.id_guide = guide.id_guide INNER JOIN users
+ ON users.id_user = guide.id_user WHERE name_offer LIKE :search OR description LIKE :search OR place_offer LIKE :search
+  OR price_offer LIKE :search OR city_offer LIKE :search OR lastname LIKE :search OR firstname LIKE :search ORDER BY offers.date_publication DESC LIMIT 10 OFFSET $offset",[':search' => '%'. $var . '%'])->fetchAll();
+        }
+        if (empty($_GET['page'])) {
+            $_GET['page'] = 1;
+        }
+        if (isset($data[$_GET['page'] - 1])) {
+            foreach ($data[$_GET['page'] - 1] as $article) {
+                echo '<tr>
+                <td><img src="guides/guide_' . $article[10] . '/' . $article['img_offer'] . '" height="200px" width="200px" alt=""></td>
+                <td>' . $article['city_offer'] . '</td>
+                <td>' . $article['lastname'] . ' ' . $article['firstname'] . '</td>
+                <td><h4>' . $article['name_offer'] . '</h4><br><p>' . $article['description'] . '</p></td>
+                <td> ' . $article['price_offer'] . ' €</td>
+                <td><button type="button" class="btn btn-primary"><a href="view.php?id=' . $article['id_offer'] . '">Voir Plus</a></button></td>
+                </tr>';
+            }
+            echo '<td><a style="color: #000;" href="offres.php?page=1">&lt;&lt;</a></td>';
+            for ($l = 0; $l < $nb_page; $l++) {
+                echo '<td><a style="color: black;" href="offres.php?page=' . ($l + 1) . '">' . ($l + 1) . '</a></td>';
+            }
+            echo '<td><a style="color: #000;" href="offres.php?page=' . $nb_page . '">&gt;&gt;</a></td>';
+        } else {
+            echo '<td>Cette page n\'existe pas !</td>';
+        }
+    }
 }

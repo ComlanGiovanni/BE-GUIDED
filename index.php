@@ -153,22 +153,8 @@ $val = App::getOffer()->last_offer($db);
             </div>
             <!-- End Item -->
         </div>
-        <!-- End Carousel Inner -->
-        <div class="controls">
-            <ul class="nav">
-                <?php for ($i = 0; $i < 4; $i++) : ?>
-                    <li data-target="#custom_carousel" data-slide-to="<?php echo $i; ?>" class="controls <?php if ($i == 0) {
-                        echo 'active';
-                    } ?>"><a href="#"><img
-                                    src="<?php echo $val[$i]['img_offer']; ?>" alt="no img">
-                            <small><?php echo $val[$i]['name_offer']; ?></small>
-                        </a>
-                    </li>
-                <?php endfor; ?>
-                <br><br>
-                <div class="lienoffres"><a href="offres.php" class="seloffer">Plus d'offres</a></div>
-            </ul>
-        </div>
+       
+        <div class="lienoffres"><a href="offres.php" class="seloffer">Plus d'offres</a></div>
     </div>
     <!-- End Carousel -->
 </div>

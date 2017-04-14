@@ -25,9 +25,11 @@ App::getUser()->restrict();
         <div class="col-sm-6 col-sm-offset-3">
             <div id="imaginary_container">
                 <div class="input-group stylish-input-group">
-                    <input type="text" class="form-control" placeholder="Rechercher">
+                    <form action="" method="post">
+                    <input name="search" type="text" class="form-control" placeholder="Rechercher">
                     <span class="input-group-addon"><button type="submit"><span
                                     class="glyphicon glyphicon-search"></span></button> </span>
+                    </form>
                 </div>
             </div>
         </div>
@@ -46,7 +48,12 @@ App::getUser()->restrict();
         </tr>
         </thead>
         <tbody>
-        <?php App::getOffer()->list_offer($db); ?>
+        <?php
+        if (!empty($_POST) && isset($_POST['search'])) {
+            App::getOffer()->search_offer($db, $_POST['search']);
+        } else {
+            App::getOffer()->list_offer($db);
+        } ?>
         </tbody>
     </table>
 </div>
