@@ -59,7 +59,7 @@ a:focus {
 .navbar-custom .navbar-brand {
     font-weight: 700;
 }
-.navbar-custom .navbar-brand:focus, {
+.navbar-custom .navbar-brand:focus {
     outline: none;
 }
 .navbar-custom a {
@@ -338,7 +338,7 @@ label {
     margin-right: 50px;
     margin-left: 50px;
 }
-}
+
 .navbar-nav>li>.dropdown-menu {
     margin-top: 0;
     border-top-left-radius: 0;

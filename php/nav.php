@@ -60,7 +60,7 @@ ini_set('error_reporting', E_ALL);
                     </ul>
                 </li>
                 <li>
-                    <a class="page-scroll" href="geoloc.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Localisation</a>
+                    <a class="page-scroll" href="geoloc.php"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Localisation</a>
                 </li>';
                         
                     }
